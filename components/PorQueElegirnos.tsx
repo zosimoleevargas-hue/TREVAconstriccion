@@ -13,33 +13,33 @@ import {
 const RAZONES = [
   {
     icon: Shield,
-    title: "Material de alta calidad",
-    desc: "Concreto con resistencias certificadas para garantizar la durabilidad de tu obra.",
+    title: "Calidad certificada",
+    desc: "Concreto con resistencias certificadas para la durabilidad de tu obra.",
   },
   {
     icon: Clock,
     title: "Entrega puntual",
-    desc: "Llegamos a tu obra a la hora acordada. Sabemos que el tiempo es dinero.",
+    desc: "Llegamos a tu obra a la hora acordada. El tiempo es dinero y lo sabemos.",
   },
   {
     icon: MapPin,
     title: "Cobertura total",
-    desc: "Atendemos Mexicali, Valle de Mexicali, ejidos y zonas agrícolas.",
+    desc: "Mexicali, Valle, ejidos y zonas agrícolas. Donde estés, llegamos.",
   },
   {
     icon: HeartHandshake,
-    title: "Atención personalizada",
-    desc: "Te asesoramos para elegir el concreto ideal para tu proyecto.",
+    title: "Asesoría personalizada",
+    desc: "Te guiamos para elegir el concreto ideal para tu proyecto.",
   },
   {
     icon: DollarSign,
-    title: "Precios competitivos",
-    desc: "La mejor relación calidad-precio del mercado. Cotiza sin compromiso.",
+    title: "Precio justo",
+    desc: "La mejor relación calidad-precio. Cotiza sin compromiso.",
   },
   {
     icon: Users,
-    title: "Personal con experiencia",
-    desc: "Equipo capacitado con años de experiencia en la industria.",
+    title: "Experiencia comprobada",
+    desc: "Más de 10 años en la industria respaldan cada entrega.",
   },
 ];
 
@@ -59,22 +59,22 @@ const cardVariants = {
 
 export default function PorQueElegirnos() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+          <span className="text-primary text-sm font-medium uppercase tracking-widest">
             ¿Por qué TREVA?
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
             ¿Por qué elegirnos?
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
             Más de 10 años respaldando obras en Mexicali y el Valle.
           </p>
         </motion.div>
@@ -90,15 +90,20 @@ export default function PorQueElegirnos() {
             <motion.div
               key={r.title}
               variants={cardVariants}
-              className="p-6 rounded-2xl border border-gray-100 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="group relative p-7 rounded-2xl border border-gray-100 hover:border-primary/20 transition-all duration-300 card-hover"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <r.icon className="text-primary" size={22} />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <r.icon className="text-primary" size={22} />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {r.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {r.desc}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {r.title}
-              </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{r.desc}</p>
             </motion.div>
           ))}
         </motion.div>

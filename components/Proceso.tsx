@@ -13,7 +13,7 @@ const PASOS = [
   {
     icon: ClipboardList,
     title: "Solicita tu cotización",
-    desc: "Contáctanos por WhatsApp, teléfono o formulario y recibe tu cotización sin compromiso.",
+    desc: "Contáctanos por WhatsApp o el formulario y recibe tu cotización sin compromiso.",
     number: "01",
   },
   {
@@ -25,73 +25,81 @@ const PASOS = [
   {
     icon: Factory,
     title: "Preparamos el concreto",
-    desc: "Producimos el concreto con la resistencia y especificaciones que necesitas.",
+    desc: "Producimos el concreto con la resistencia que necesitas.",
     number: "03",
   },
   {
     icon: Truck,
     title: "Entregamos en obra",
-    desc: "Nuestros camiones revolvedores llegan puntuales y descargan directo en tu obra.",
+    desc: "Camiones revolvedores puntuales descargan directo en tu obra.",
     number: "04",
   },
   {
     icon: CheckCircle,
-    title: "Tu proyecto continúa",
-    desc: "Con el material en obra, tu construcción avanza sin retrasos.",
+    title: "Tu proyecto avanza",
+    desc: "Con el material listo, tu construcción sigue sin retrasos.",
     number: "05",
   },
 ];
 
 export default function Proceso() {
   return (
-    <section id="proceso" className="py-20 bg-white">
+    <section id="proceso" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+          <span className="text-primary text-sm font-medium uppercase tracking-widest">
             Proceso
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
-            ¿Cómo trabajamos?
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
+            Así trabajamos
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
             De la cotización a la entrega, te acompañamos en cada paso.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {PASOS.map((paso, i) => (
-            <motion.div
-              key={paso.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: "easeOut" as const,
-              }}
-              className="relative flex flex-col items-center text-center"
-            >
-              <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-3 shadow-lg shadow-primary/25">
-                <paso.icon size={24} />
-              </div>
-              <span className="text-xs font-bold text-primary uppercase tracking-wider mb-1">
-                Paso {paso.number}
-              </span>
-              <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                {paso.title}
-              </h3>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                {paso.desc}
-              </p>
-            </motion.div>
-          ))}
+        <div className="relative">
+          <div className="absolute top-14 left-[calc(10%+28px)] right-[calc(10%+28px)] h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 hidden lg:block" />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {PASOS.map((paso, i) => (
+              <motion.div
+                key={paso.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: "easeOut" as const,
+                }}
+                className="relative flex flex-col items-center text-center"
+              >
+                <div className="relative mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center shadow-lg shadow-primary/25">
+                    <paso.icon size={22} />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-primary flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-primary">
+                      {paso.number}
+                    </span>
+                  </div>
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                  {paso.title}
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                  {paso.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

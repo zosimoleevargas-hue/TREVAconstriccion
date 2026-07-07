@@ -12,10 +12,10 @@ export default function WhatsAppButton() {
       href="https://wa.me/526863062340"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-600 transition-colors"
+      className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 hover:scale-105 transition-all"
       aria-label="Contactar por WhatsApp"
     >
-      <MessageCircle size={26} className="text-white" />
+      <MessageCircle size={24} className="text-white" />
     </motion.a>
   );
 }

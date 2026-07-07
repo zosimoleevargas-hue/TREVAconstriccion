@@ -10,12 +10,12 @@ const FAQS = [
     a: "El pedido mínimo es de 1 metro cúbico. Para volúmenes menores, contáctanos y te ofrecemos una opción.",
   },
   {
-    q: "¿Hacen entregas el mismo día?",
-    a: "Sí, en la mayoría de los casos podemos entregar el mismo día si el pedido se realiza antes de las 10:00 a.m. Sujeto a disponibilidad.",
+    q: "¿Entregan el mismo día?",
+    a: "Sí, en la mayoría de los casos podemos entregar el mismo día si el pedido se realiza antes de las 10:00 a.m.",
   },
   {
     q: "¿Qué resistencia de concreto manejan?",
-    a: "Manejamos resistencias desde f'c 100 kg/cm² hasta f'c 350 kg/cm² y podemos preparar resistencias especiales según tu proyecto.",
+    a: "Manejamos desde f'c 100 kg/cm² hasta f'c 350 kg/cm². También preparamos resistencias especiales según tu proyecto.",
   },
   {
     q: "¿Atienden obras grandes?",
@@ -31,35 +31,33 @@ const FAQS = [
   },
 ];
 
-function AccordionItem({
-  item,
-  index,
-}: {
-  item: { q: string; a: string };
-  index: number;
-}) {
+function AccordionItem({ item }: { item: { q: string; a: string } }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div
-      className={`border border-gray-200 rounded-xl overflow-hidden transition-all ${
-        open ? "shadow-sm" : ""
+      className={`border border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 ${
+        open ? "shadow-sm bg-white" : "bg-white"
       }`}
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50/50 transition-colors"
         aria-expanded={open}
       >
-        <span className="font-medium text-gray-900 text-sm sm:text-base">
+        <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">
           {item.q}
         </span>
-        <ChevronDown
-          size={18}
-          className={`text-gray-400 transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+          open ? "bg-primary/10" : "bg-gray-100"
+        }`}>
+          <ChevronDown
+            size={16}
+            className={`text-gray-500 transition-transform duration-200 ${
+              open ? "rotate-180 text-primary" : ""
+            }`}
+          />
+        </div>
       </button>
       <AnimatePresence initial={false}>
         {open && (
@@ -71,7 +69,7 @@ function AccordionItem({
             transition={{ duration: 0.3, ease: "easeInOut" as const }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+            <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed">
               {item.a}
             </div>
           </motion.div>
@@ -83,21 +81,24 @@ function AccordionItem({
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-24 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+          <span className="text-primary text-sm font-medium uppercase tracking-widest">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
+          <h2 className="text-4xl font-bold text-gray-900 mt-3 tracking-tight">
             Preguntas frecuentes
           </h2>
+          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+            Resolvemos tus dudas antes de que las tengas.
+          </p>
         </motion.div>
 
         <motion.div
@@ -108,7 +109,7 @@ export default function FAQ() {
           className="flex flex-col gap-3"
         >
           {FAQS.map((faq, i) => (
-            <AccordionItem key={i} item={faq} index={i} />
+            <AccordionItem key={i} item={faq} />
           ))}
         </motion.div>
       </div>

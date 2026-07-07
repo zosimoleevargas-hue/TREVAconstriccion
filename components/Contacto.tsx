@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+
+const schema = z.object({
+  nombre: z.string().min(2, "Tu nombre es obligatorio"),
+  telefono: z.string().min(8, "Teléfono inválido"),
+  mensaje: z.string().min(5, "Cuéntanos qué necesitas"),
+});
+
+type FormData = z.infer<typeof schema>;
 
 const DATOS = [
   { icon: Phone, label: "Teléfono", value: "+52 686 306 2340", href: "tel:+526863062340" },
@@ -23,13 +33,16 @@ const DATOS = [
 ];
 
 export default function Contacto() {
-  const [nombre, setNombre] = useState("");
-  const [telefono, setTelefono] = useState("");
-  const [mensaje, setMensaje] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
 
-  const enviarWhatsApp = (e: React.FormEvent) => {
-    e.preventDefault();
-    const texto = `Hola TREVA, soy ${nombre}.%0A%0ATel: ${telefono}%0A%0A${mensaje}`;
+  const enviarWhatsApp = (data: FormData) => {
+    const texto = `Hola TREVA, soy ${data.nombre}.%0A%0ATel: ${data.telefono}%0A%0A${data.mensaje}`;
     window.open(
       `https://wa.me/526863062340?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
       "_blank"
@@ -37,10 +50,10 @@ export default function Contacto() {
   };
 
   return (
-    <section id="contacto" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gray-900" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+    <section id="contacto" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gray-950" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -48,21 +61,20 @@ export default function Contacto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+          <span className="text-primary text-sm font-medium uppercase tracking-widest">
             Contacto
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mt-3 tracking-tight">
             Solicita tu cotización
           </h2>
-          <p className="text-gray-400 mt-3 max-w-xl mx-auto">
-            Estamos listos para atenderte. Contáctanos por el medio que
-            prefieras.
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+            Sin compromiso. Te respondemos el mismo día.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -73,13 +85,13 @@ export default function Contacto() {
             {DATOS.map((d) => (
               <div
                 key={d.label}
-                className="bg-white/5 border border-gray-700 rounded-xl p-5 flex items-center gap-4"
+                className="glass-dark rounded-2xl p-5 flex items-center gap-4 hover:border-primary/20 transition-all"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
                   <d.icon className="text-primary" size={22} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">
                     {d.label}
                   </p>
                   {d.href ? (
@@ -109,44 +121,60 @@ export default function Contacto() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/5 border border-gray-700 rounded-2xl p-8">
-              <h3 className="text-white text-lg font-semibold mb-6">
+            <div className="glass-dark rounded-3xl p-8">
+              <h3 className="text-white text-lg font-semibold mb-2">
                 Envíanos un mensaje
               </h3>
+              <p className="text-gray-400 text-sm mb-6">
+                Cuéntanos tu proyecto y te cotizamos.
+              </p>
               <form
                 className="space-y-4"
-                onSubmit={enviarWhatsApp}
+                onSubmit={handleSubmit(enviarWhatsApp)}
+                noValidate
               >
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  value={nombre}
-                  onChange={(e) => setNombre(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:border-primary outline-none transition-colors"
-                />
-                <input
-                  type="tel"
-                  placeholder="Teléfono"
-                  value={telefono}
-                  onChange={(e) => setTelefono(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:border-primary outline-none transition-colors"
-                />
-                <textarea
-                  placeholder="Mensaje"
-                  rows={4}
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:border-primary outline-none transition-colors resize-none"
-                />
-                <button
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Tu nombre"
+                    {...register("nombre")}
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  />
+                  {errors.nombre && (
+                    <p className="text-red-400 text-xs mt-1">{errors.nombre.message}</p>
+                  )}
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Tu teléfono"
+                    {...register("telefono")}
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  />
+                  {errors.telefono && (
+                    <p className="text-red-400 text-xs mt-1">{errors.telefono.message}</p>
+                  )}
+                </div>
+                <div>
+                  <textarea
+                    placeholder="¿Qué necesitas? (ej: 10 m³ para losa)"
+                    rows={4}
+                    {...register("mensaje")}
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+                  />
+                  {errors.mensaje && (
+                    <p className="text-red-400 text-xs mt-1">{errors.mensaje.message}</p>
+                  )}
+                </div>
+                <motion.button
                   type="submit"
-                  className="w-full bg-primary text-white py-3 rounded-xl font-medium hover:bg-primary-dark transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
                 >
-                  Enviar mensaje
-                </button>
+                  <Send size={16} />
+                  Enviar cotización
+                </motion.button>
               </form>
             </div>
           </motion.div>

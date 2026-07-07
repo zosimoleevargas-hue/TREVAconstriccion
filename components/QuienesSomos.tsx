@@ -11,22 +11,25 @@ const VALORES = [
 
 export default function QuienesSomos() {
   return (
-    <section id="nosotros" className="py-20 bg-white">
+    <section id="nosotros" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-              <div className="w-full h-full bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🚛</div>
-                  <p className="text-gray-600 font-semibold text-lg">
-                    Flota de camiones revolvedores
-                  </p>
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl" />
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+                <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <Truck className="text-primary/40 mx-auto mb-4" size={64} strokeWidth={1} />
+                    <p className="text-white font-semibold text-lg">
+                      Flota de camiones revolvedores
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -38,40 +41,40 @@ export default function QuienesSomos() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-primary text-sm font-medium uppercase tracking-widest">
               Nosotros
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6 tracking-tight">
               Somos TREVA
             </h2>
 
-            <p className="text-gray-600 leading-relaxed mb-6">
-              En TREVA nos dedicamos a la venta y distribución de concreto
-              premezclado de alta calidad en Mexicali y todo el Valle de
-              Mexicali. Contamos con una flota de camiones revolvedores modernos
-              y personal capacitado para garantizar entregas puntuales en cada
-              obra.
+            <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+              Nos dedicamos a la venta y distribución de concreto
+              premezclado de alta calidad en Mexicali y todo el Valle.
             </p>
 
-            <p className="text-gray-600 leading-relaxed mb-8">
-              Atendemos proyectos residenciales, comerciales, industriales y
-              agrícolas. Desde una banqueta hasta un desarrollo completo,
-              nuestro compromiso es ofrecer material de primera calidad con el
-              mejor servicio.
+            <p className="text-gray-500 leading-relaxed mb-10">
+              Contamos con flota de camiones revolvedores modernos y personal
+              capacitado. Atendemos proyectos residenciales, comerciales,
+              industriales y agrícolas. Desde una banqueta hasta un desarrollo
+              completo.
             </p>
 
             <div className="grid sm:grid-cols-3 gap-4">
-              {VALORES.map((v) => (
-                <div
-                  key={v.label}
-                  className="p-4 rounded-xl bg-gray-50 text-center border border-gray-100"
-                >
-                  <v.icon className="text-primary mx-auto mb-2" size={24} />
-                  <p className="text-sm font-semibold text-gray-800">
-                    {v.label}
-                  </p>
-                </div>
-              ))}
+              {VALORES.map((v) => {
+                const Icon = v.icon;
+                return (
+                  <div
+                    key={v.label}
+                    className="group p-5 rounded-2xl bg-gray-50 border border-gray-100 text-center card-hover"
+                  >
+                    <Icon className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={24} />
+                    <p className="text-sm font-semibold text-gray-800">
+                      {v.label}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>

@@ -27,24 +27,24 @@ export default function Calculadora() {
   };
 
   return (
-    <section id="calculadora" className="py-20 bg-white">
+    <section id="calculadora" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-wider">
+          <span className="text-primary text-sm font-medium uppercase tracking-widest">
             Calculadora
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
-            Calcula tu concreto
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
+            Calcula tu concreto en segundos
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            Ingresa las dimensiones de tu obra y calcula los metros cúbicos que
-            necesitas.
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+                    Ingresa las medidas de tu obra y te decimos cuántos metros cúbicos
+                    necesitas.
           </p>
         </motion.div>
 
@@ -55,88 +55,100 @@ export default function Calculadora() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-lg mx-auto"
         >
-          <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Calculator className="text-primary" size={20} />
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl" />
+            <div className="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  <Calculator className="text-primary" size={22} />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Calculadora de m³</p>
+                  <p className="text-xs text-gray-400">Llena los campos y calcula</p>
+                </div>
               </div>
-              <p className="font-semibold text-gray-800">Calculadora de m³</p>
+
+              <div className="space-y-5 mb-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Largo (metros)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={largo}
+                    onChange={(e) => setLargo(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    placeholder="Ej: 5.00"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Ancho (metros)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={ancho}
+                    onChange={(e) => setAncho(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    placeholder="Ej: 4.00"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Espesor (centímetros)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.5"
+                    value={espesor}
+                    onChange={(e) => setEspesor(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    placeholder="Ej: 10"
+                  />
+                </div>
+
+                <motion.button
+                  onClick={calcular}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-primary text-white py-3 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                >
+                  Calcular metros cúbicos
+                </motion.button>
+              </div>
+
+              {resultado !== null && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/0 border border-primary/20 text-center mb-4"
+                >
+                  <p className="text-sm text-gray-500 mb-1">Necesitas aproximadamente</p>
+                  <p className="text-4xl font-bold text-primary">
+                    {resultado} m³
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    de concreto premezclado
+                  </p>
+                </motion.div>
+              )}
+
+              {resultado !== null && (
+                <motion.button
+                  onClick={enviarWhatsApp}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-medium hover:bg-green-600 transition-colors shadow-lg shadow-green-500/25"
+                >
+                  <Send size={16} />
+                  Enviar cotización por WhatsApp
+                </motion.button>
+              )}
             </div>
-
-            <div className="space-y-4 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Largo (metros)
-                </label>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={largo}
-                  onChange={(e) => setLargo(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  placeholder="Ej: 5"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Ancho (metros)
-                </label>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={ancho}
-                  onChange={(e) => setAncho(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  placeholder="Ej: 4"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Espesor (centímetros)
-                </label>
-                <input
-                  type="number"
-                  step="0.5"
-                  value={espesor}
-                  onChange={(e) => setEspesor(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                  placeholder="Ej: 10"
-                />
-              </div>
-
-              <button
-                onClick={calcular}
-                className="w-full bg-primary text-white py-2.5 rounded-xl font-medium hover:bg-primary-dark transition-colors"
-              >
-                Calcular metros cúbicos
-              </button>
-            </div>
-
-            {resultado !== null && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-xl bg-primary/5 border border-primary/20 text-center mb-4"
-              >
-                <p className="text-sm text-gray-500">Necesitas aproximadamente</p>
-                <p className="text-3xl font-bold text-primary">
-                  {resultado} m³
-                </p>
-                <p className="text-xs text-gray-400">
-                  de concreto premezclado
-                </p>
-              </motion.div>
-            )}
-
-            {resultado !== null && (
-              <button
-                onClick={enviarWhatsApp}
-                className="w-full flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 rounded-xl font-medium hover:bg-green-600 transition-colors"
-              >
-                <Send size={16} />
-                Enviar cotización por WhatsApp
-              </button>
-            )}
           </div>
         </motion.div>
       </div>
