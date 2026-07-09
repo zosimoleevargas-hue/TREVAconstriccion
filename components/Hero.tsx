@@ -80,11 +80,19 @@ export default function Hero() {
             >
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <ShieldCheck size={16} className="text-primary" />
-                <span>Resistencia garantizada</span>
+                <span>3+ años de experiencia</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <ShieldCheck size={16} className="text-primary" />
-                <span>Entrega puntual</span>
+                <span>+50 proyectos realizados</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <ShieldCheck size={16} className="text-primary" />
+                <span>Cobertura Mexicali y Valle</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <ShieldCheck size={16} className="text-primary" />
+                <span>Respuesta menos de 30 min</span>
               </div>
             </motion.div>
           </motion.div>
@@ -126,8 +134,8 @@ export default function Hero() {
               transition={{ delay: 1, duration: 0.5 }}
               className="absolute -bottom-5 -left-5 glass-dark rounded-2xl px-6 py-4"
             >
-              <p className="text-lg font-bold text-white">+200</p>
-              <p className="text-xs text-gray-400">obras entregadas</p>
+              <p className="text-lg font-bold text-white">3+</p>
+              <p className="text-xs text-gray-400">años de experiencia</p>
             </motion.div>
 
             <motion.div
@@ -136,8 +144,8 @@ export default function Hero() {
               transition={{ delay: 1.1, duration: 0.5 }}
               className="absolute -top-5 -right-5 glass-dark rounded-2xl px-6 py-4"
             >
-              <p className="text-lg font-bold text-white">10+</p>
-              <p className="text-xs text-gray-400">años de experiencia</p>
+              <p className="text-lg font-bold text-white">+50</p>
+              <p className="text-xs text-gray-400">proyectos realizados</p>
             </motion.div>
           </motion.div>
         </div>
