@@ -3,9 +3,12 @@
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #1a1a1a;
-  --color-primary: #E85D2C;
-  --color-primary-dark: #D04A1A;
-  --color-primary-light: #F07840;
+  --color-primary: #1B2A4A;
+  --color-primary-dark: #0F1D3A;
+  --color-primary-light: #2A3F6A;
+  --color-accent: #E85D2C;
+  --color-accent-dark: #D04A1A;
+  --color-accent-light: #F07840;
   --color-concrete: #6B7280;
   --color-concrete-light: #9CA3AF;
   --color-concrete-dark: #4B5563;
@@ -62,6 +65,10 @@ html {
 ::selection {
   background-color: #E85D2C;
   color: white;
+}
+
+.accent-glow {
+  box-shadow: 0 0 30px color-mix(in srgb, #E85D2C 25%, transparent);
 }
 
 ::-webkit-scrollbar {

@@ -22,8 +22,8 @@ export default function Calculadora() {
 
   const enviarWhatsApp = () => {
     if (resultado === null) return;
-    const mensaje = `Hola TREVA, quiero cotizar concreto:%0A%0A📐 Largo: ${largo} m%0A📐 Ancho: ${ancho} m%0A📐 Espesor: ${espesor} cm%0A📊 Total: ${resultado} m³%0A%0A¿Me pueden dar el precio?`;
-    window.open(`https://wa.me/526863062340?text=${mensaje}`, "_blank");
+    const mensaje = `Hola TREVA, quiero cotizar concreto:\n\nLargo: ${largo} m\nAncho: ${ancho} m\nEspesor: ${espesor} cm\nTotal: ${resultado} m³\n\n¿Me pueden dar el precio?`;
+    window.open(`https://wa.me/526863062340?text=${encodeURIComponent(mensaje).replace(/%20/g, "%0A")}`, "_blank");
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Calculadora() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
+          <span className="text-accent text-sm font-medium uppercase tracking-widest">
             Calculadora
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
@@ -56,11 +56,11 @@ export default function Calculadora() {
           className="max-w-lg mx-auto"
         >
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
             <div className="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                  <Calculator className="text-primary" size={22} />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center">
+                  <Calculator className="text-accent" size={22} />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Calculadora de m³</p>
@@ -78,7 +78,7 @@ export default function Calculadora() {
                     step="0.01"
                     value={largo}
                     onChange={(e) => setLargo(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"
                     placeholder="Ej: 5.00"
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function Calculadora() {
                     step="0.01"
                     value={ancho}
                     onChange={(e) => setAncho(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"
                     placeholder="Ej: 4.00"
                   />
                 </div>
@@ -104,7 +104,7 @@ export default function Calculadora() {
                     step="0.5"
                     value={espesor}
                     onChange={(e) => setEspesor(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-gray-50/50"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"
                     placeholder="Ej: 10"
                   />
                 </div>
@@ -113,7 +113,7 @@ export default function Calculadora() {
                   onClick={calcular}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-primary text-white py-3 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                  className="w-full bg-accent text-white py-3 rounded-xl font-medium hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25"
                 >
                   Calcular metros cúbicos
                 </motion.button>
@@ -123,10 +123,10 @@ export default function Calculadora() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/0 border border-primary/20 text-center mb-4"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-accent/5 to-accent/0 border border-accent/20 text-center mb-4"
                 >
                   <p className="text-sm text-gray-500 mb-1">Necesitas aproximadamente</p>
-                  <p className="text-4xl font-bold text-primary">
+                  <p className="text-4xl font-bold text-accent">
                     {resultado} m³
                   </p>
                   <p className="text-xs text-gray-400 mt-1">

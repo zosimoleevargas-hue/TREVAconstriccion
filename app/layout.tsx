@@ -55,7 +55,7 @@ export default function RootLayout({
       addressRegion: "Baja California",
       addressCountry: "MX",
     },
-    openingHours: "Mo-Sa 08:00-18:00",
+    openingHours: "Mo-Sa 07:00-15:00",
     sameAs: [
       "https://wa.me/526863062340",
       "https://instagram.com/trevaconstruccionesccccccyconcreto",

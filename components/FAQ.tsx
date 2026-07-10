@@ -7,15 +7,15 @@ import { ChevronDown } from "lucide-react";
 const FAQS = [
   {
     q: "¿Cuál es el pedido mínimo?",
-    a: "El pedido mínimo es de 1 metro cúbico. Para volúmenes menores, contáctanos y te ofrecemos una opción.",
+    a: "No manejamos pedido mínimo, atendemos proyectos de cualquier tamaño.",
   },
   {
     q: "¿Entregan el mismo día?",
-    a: "Sí, en la mayoría de los casos podemos entregar el mismo día si el pedido se realiza antes de las 10:00 a.m.",
+    a: "Sí, entregamos el mismo día.",
   },
   {
     q: "¿Qué resistencia de concreto manejan?",
-    a: "Manejamos desde f'c 100 kg/cm² hasta f'c 350 kg/cm². También preparamos resistencias especiales según tu proyecto.",
+    a: "Manejamos resistencias desde f'c 150 hasta f'c 250 kg/cm², según las necesidades de tu proyecto.",
   },
   {
     q: "¿Atienden obras grandes?",
@@ -49,12 +49,12 @@ function AccordionItem({ item }: { item: { q: string; a: string } }) {
           {item.q}
         </span>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-          open ? "bg-primary/10" : "bg-gray-100"
+          open ? "bg-accent/10" : "bg-gray-100"
         }`}>
           <ChevronDown
             size={16}
             className={`text-gray-500 transition-transform duration-200 ${
-              open ? "rotate-180 text-primary" : ""
+              open ? "rotate-180 text-accent" : ""
             }`}
           />
         </div>
@@ -90,7 +90,7 @@ export default function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
+          <span className="text-accent text-sm font-medium uppercase tracking-widest">
             FAQ
           </span>
           <h2 className="text-4xl font-bold text-gray-900 mt-3 tracking-tight">

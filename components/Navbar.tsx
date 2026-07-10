@@ -31,10 +31,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
-        <a href="#hero" className="text-2xl font-bold">
-          <span className={scrolled ? "text-primary" : "text-white"}>
-            TREVA
-          </span>
+        <a href="#hero" className="flex items-center shrink-0">
+          <img
+            src="/logo-treva.png"
+            alt="TREVA Concreto Premezclado"
+            className="h-14 w-auto drop-shadow-lg"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -42,8 +44,8 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                scrolled ? "text-gray-600" : "text-gray-300"
+              className={`text-sm font-medium transition-colors ${
+                scrolled ? "text-gray-600 hover:text-accent" : "text-gray-300 hover:text-white"
               }`}
             >
               {item.label}
@@ -53,7 +55,7 @@ export default function Navbar() {
             href="https://wa.me/526863062340"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+            className="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
           >
             <MessageCircle size={16} />
             Cotizar
@@ -83,7 +85,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm text-gray-600 hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-gray-50"
+                  className="text-sm text-gray-600 hover:text-accent transition-colors py-2 px-3 rounded-lg hover:bg-gray-50"
                 >
                   {item.label}
                 </a>
@@ -93,7 +95,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors mt-2"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-accent-dark transition-colors mt-2"
               >
                 <MessageCircle size={16} />
                 Cotizar por WhatsApp

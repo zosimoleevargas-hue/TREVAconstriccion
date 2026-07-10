@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const CONTACTOS = [
@@ -25,7 +26,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-white text-2xl font-bold mb-4">TREVA</h3>
+            <Image
+              src="/logo-treva.png"
+              alt="TREVA Concreto Premezclado"
+              width={140}
+              height={46}
+              className="h-14 w-auto mb-4"
+            />
             <p className="text-sm leading-relaxed text-gray-500 mb-6">
               Venta y distribución de concreto premezclado en Mexicali y Valle
               de Mexicali.
@@ -56,9 +63,9 @@ export default function Footer() {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="flex items-center gap-3 text-sm hover:text-primary transition-colors group"
+                        className="flex items-center gap-3 text-sm hover:text-accent transition-colors group"
                       >
-                        <Icon size={14} className="text-gray-600 group-hover:text-primary transition-colors" />
+                        <Icon size={14} className="text-gray-600 group-hover:text-accent transition-colors" />
                         {c.label}
                       </a>
                     ) : (
@@ -82,7 +89,7 @@ export default function Footer() {
                 <li key={link}>
                   <a
                     href={`#${link === "Inicio" ? "hero" : link.toLowerCase()}`}
-                    className="text-sm hover:text-primary transition-colors"
+                    className="text-sm hover:text-accent transition-colors"
                   >
                     {link}
                   </a>
@@ -98,7 +105,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex justify-between">
                 <span className="text-gray-500">Lun - Sáb</span>
-                <span className="text-gray-300">8:00 - 18:00</span>
+                <span className="text-gray-300">7:00 - 15:00</span>
               </li>
               <li className="flex justify-between">
                 <span className="text-gray-500">Domingo</span>
@@ -119,14 +126,14 @@ export default function Footer() {
               href="https://instagram.com/trevaconstruccionesccccccyconcreto"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-600 hover:text-primary transition-colors"
+              className="flex items-center gap-1.5 text-gray-600 hover:text-accent transition-colors"
             >
               <Globe size={14} />
               Instagram
             </a>
             <a
               href="#"
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-accent transition-colors"
             >
               Aviso de privacidad
             </a>

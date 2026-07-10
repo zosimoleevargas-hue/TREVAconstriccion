@@ -76,7 +76,7 @@ export default function Testimonios() {
         </motion.div>
 
         <div className="max-w-2xl mx-auto relative">
-          <Quote className="absolute -top-4 -left-4 text-primary/10" size={48} />
+          <Quote className="absolute -top-4 -left-4 text-accent/10" size={48} />
           <div className="overflow-hidden relative">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
@@ -104,7 +104,7 @@ export default function Testimonios() {
                   &ldquo;{TESTIMONIOS[current].text}&rdquo;
                 </p>
                 <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center text-primary font-semibold text-sm">
                     {TESTIMONIOS[current].initials}
                   </div>
                   <div>
@@ -125,7 +125,7 @@ export default function Testimonios() {
               onClick={prev}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-accent/5 transition-colors"
               aria-label="Anterior"
             >
               <ChevronLeft size={18} />
@@ -140,7 +140,7 @@ export default function Testimonios() {
                   }}
                   className={`rounded-full transition-all duration-300 ${
                     i === current
-                      ? "bg-primary w-8 h-2"
+                      ? "bg-accent w-8 h-2"
                       : "bg-gray-300 w-2 h-2 hover:bg-gray-400"
                   }`}
                   aria-label={`Ir al testimonio ${i + 1}`}
@@ -151,7 +151,7 @@ export default function Testimonios() {
               onClick={next}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-accent/5 transition-colors"
               aria-label="Siguiente"
             >
               <ChevronRight size={18} />

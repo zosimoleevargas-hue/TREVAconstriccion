@@ -53,7 +53,7 @@ export default function Proceso() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
+          <span className="text-accent text-sm font-medium uppercase tracking-widest">
             Proceso
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
@@ -65,7 +65,7 @@ export default function Proceso() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute top-14 left-[calc(10%+28px)] right-[calc(10%+28px)] h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 hidden lg:block" />
+          <div className="absolute top-14 left-[calc(10%+28px)] right-[calc(10%+28px)] h-px bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20 hidden lg:block" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {PASOS.map((paso, i) => (
@@ -82,11 +82,11 @@ export default function Proceso() {
                 className="relative flex flex-col items-center text-center"
               >
                 <div className="relative mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center shadow-lg shadow-primary/25">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white flex items-center justify-center shadow-lg shadow-accent/25">
                     <paso.icon size={22} />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-primary flex items-center justify-center">
-                    <span className="text-[10px] font-bold text-primary">
+                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-accent flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-accent">
                       {paso.number}
                     </span>
                   </div>

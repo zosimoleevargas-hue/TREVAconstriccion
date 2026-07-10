@@ -21,16 +21,13 @@ export default function QuienesSomos() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl" />
+              <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
-                <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Truck className="text-primary/40 mx-auto mb-4" size={64} strokeWidth={1} />
-                    <p className="text-white font-semibold text-lg">
-                      Flota de camiones revolvedores
-                    </p>
-                  </div>
-                </div>
+                <img
+                  src="/camion-mezcla.jpg"
+                  alt="Camión revolvedor TREVA"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
@@ -41,7 +38,7 @@ export default function QuienesSomos() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary text-sm font-medium uppercase tracking-widest">
+            <span className="text-accent text-sm font-medium uppercase tracking-widest">
               Nosotros
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 mb-6 tracking-tight">
@@ -54,7 +51,7 @@ export default function QuienesSomos() {
             </p>
 
             <p className="text-gray-500 leading-relaxed mb-10">
-              Contamos con flota de camiones revolvedores modernos y personal
+              Contamos con camión revolvedor propio moderno y personal
               capacitado. Atendemos proyectos residenciales, comerciales,
               industriales y agrícolas. Desde una banqueta hasta un desarrollo
               completo.
@@ -68,7 +65,7 @@ export default function QuienesSomos() {
                     key={v.label}
                     className="group p-5 rounded-2xl bg-gray-50 border border-gray-100 text-center card-hover"
                   >
-                    <Icon className="text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" size={24} />
+                    <Icon className="text-accent mx-auto mb-3 group-hover:scale-110 transition-transform" size={24} />
                     <p className="text-sm font-semibold text-gray-800">
                       {v.label}
                     </p>

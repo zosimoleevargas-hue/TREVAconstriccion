@@ -61,7 +61,7 @@ export default function Galeria() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon className="text-primary/30 group-hover:text-primary/50 group-hover:scale-110 transition-all duration-300" size={72} strokeWidth={1} />
+                  <Icon className="text-accent/30 group-hover:text-accent/50 group-hover:scale-110 transition-all duration-300" size={72} strokeWidth={1} />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white font-semibold text-sm">{item.label}</p>

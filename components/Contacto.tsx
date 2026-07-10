@@ -29,7 +29,7 @@ const DATOS = [
     href: "mailto:ventas@trevaconcreto.com",
   },
   { icon: MapPin, label: "Ubicación", value: "Poblado López Portillo, Valle de Mexicali, B.C." },
-  { icon: Clock, label: "Horario", value: "Lun - Sáb: 8:00 - 18:00" },
+  { icon: Clock, label: "Horario", value: "Lun - Sáb: 7:00 - 15:00" },
 ];
 
 export default function Contacto() {
@@ -42,7 +42,7 @@ export default function Contacto() {
   });
 
   const enviarWhatsApp = (data: FormData) => {
-    const texto = `Hola TREVA, soy ${data.nombre}.%0A%0ATel: ${data.telefono}%0A%0A${data.mensaje}`;
+    const texto = `Hola TREVA, soy ${data.nombre}.\n\nTel: ${data.telefono}\n\n${data.mensaje}`;
     window.open(
       `https://wa.me/526863062340?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
       "_blank"
@@ -52,8 +52,8 @@ export default function Contacto() {
   return (
     <section id="contacto" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gray-950" />
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -85,10 +85,10 @@ export default function Contacto() {
             {DATOS.map((d) => (
               <div
                 key={d.label}
-                className="glass-dark rounded-2xl p-5 flex items-center gap-4 hover:border-primary/20 transition-all"
+                className="glass-dark rounded-2xl p-5 flex items-center gap-4 hover:border-accent/20 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
-                  <d.icon className="text-primary" size={22} />
+                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
+                  <d.icon className="text-accent" size={22} />
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider">
@@ -103,7 +103,7 @@ export default function Contacto() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="text-white font-medium hover:text-primary transition-colors"
+                      className="text-white font-medium hover:text-accent transition-colors"
                     >
                       {d.value}
                     </a>
@@ -138,7 +138,7 @@ export default function Contacto() {
                     type="text"
                     placeholder="Tu nombre"
                     {...register("nombre")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   />
                   {errors.nombre && (
                     <p className="text-red-400 text-xs mt-1">{errors.nombre.message}</p>
@@ -149,7 +149,7 @@ export default function Contacto() {
                     type="tel"
                     placeholder="Tu teléfono"
                     {...register("telefono")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   />
                   {errors.telefono && (
                     <p className="text-red-400 text-xs mt-1">{errors.telefono.message}</p>
@@ -160,7 +160,7 @@ export default function Contacto() {
                     placeholder="¿Qué necesitas? (ej: 10 m³ para losa)"
                     rows={4}
                     {...register("mensaje")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
                   />
                   {errors.mensaje && (
                     <p className="text-red-400 text-xs mt-1">{errors.mensaje.message}</p>
@@ -170,7 +170,7 @@ export default function Contacto() {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+                  className="w-full flex items-center justify-center gap-2 bg-accent text-white py-3.5 rounded-xl font-medium hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25"
                 >
                   <Send size={16} />
                   Enviar cotización

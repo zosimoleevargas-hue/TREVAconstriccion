@@ -39,7 +39,7 @@ const RAZONES = [
   {
     icon: Users,
     title: "Experiencia comprobada",
-    desc: "Más de 10 años en la industria respaldan cada entrega.",
+    desc: "Más de 3 años en la industria respaldan cada entrega.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function PorQueElegirnos() {
             ¿Por qué elegirnos?
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
-            Más de 10 años respaldando obras en Mexicali y el Valle.
+            Más de 3 años respaldando obras en Mexicali y el Valle.
           </p>
         </motion.div>
 
@@ -90,12 +90,12 @@ export default function PorQueElegirnos() {
             <motion.div
               key={r.title}
               variants={cardVariants}
-              className="group relative p-7 rounded-2xl border border-gray-100 hover:border-primary/20 transition-all duration-300 card-hover"
+              className="group relative p-7 rounded-2xl border border-gray-100 hover:border-accent/20 transition-all duration-300 card-hover"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <r.icon className="text-primary" size={22} />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <r.icon className="text-accent" size={22} />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {r.title}
