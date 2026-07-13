@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { COMPANY } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,11 +44,10 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "TREVA Concreto",
-    description:
-      "Venta y distribución de concreto premezclado en Mexicali y Valle de Mexicali.",
+    name: COMPANY.name,
+    description: COMPANY.shortDescription,
     url: "https://treva-concreto.vercel.app",
-    telephone: "+52 686 306 2340",
+    telephone: COMPANY.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Poblado López Portillo",
@@ -55,10 +55,10 @@ export default function RootLayout({
       addressRegion: "Baja California",
       addressCountry: "MX",
     },
-    openingHours: "Mo-Sa 07:00-15:00",
+    openingHours: COMPANY.schedule,
     sameAs: [
-      "https://wa.me/526863062340",
-      "https://instagram.com/trevaconstruccionesccccccyconcreto",
+      COMPANY.whatsappUrl,
+      `https://instagram.com/${COMPANY.instagram}`,
     ],
   };
 

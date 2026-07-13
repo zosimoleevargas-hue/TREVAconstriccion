@@ -1,47 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Clock,
-  DollarSign,
-  HeartHandshake,
-  MapPin,
-  Shield,
-  Users,
-} from "lucide-react";
-
-const RAZONES = [
-  {
-    icon: Shield,
-    title: "Calidad certificada",
-    desc: "Concreto con resistencias certificadas para la durabilidad de tu obra.",
-  },
-  {
-    icon: Clock,
-    title: "Entrega puntual",
-    desc: "Llegamos a tu obra a la hora acordada. El tiempo es dinero y lo sabemos.",
-  },
-  {
-    icon: MapPin,
-    title: "Cobertura total",
-    desc: "Mexicali, Valle, ejidos y zonas agrícolas. Donde estés, llegamos.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Asesoría personalizada",
-    desc: "Te guiamos para elegir el concreto ideal para tu proyecto.",
-  },
-  {
-    icon: DollarSign,
-    title: "Precio justo",
-    desc: "La mejor relación calidad-precio. Cotiza sin compromiso.",
-  },
-  {
-    icon: Users,
-    title: "Experiencia comprobada",
-    desc: "Más de 3 años en la industria respaldan cada entrega.",
-  },
-];
+import { RAZONES } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const containerVariants = {
   hidden: {},
@@ -61,23 +22,11 @@ export default function PorQueElegirnos() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
-            ¿Por qué TREVA?
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
-            ¿Por qué elegirnos?
-          </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
-            Más de 3 años respaldando obras en Mexicali y el Valle.
-          </p>
-        </motion.div>
+        <SectionHeader
+          label="¿Por qué TREVA?"
+          title="¿Por qué elegirnos?"
+          subtitle="Más de 3 años respaldando obras en Mexicali y el Valle."
+        />
 
         <motion.div
           variants={containerVariants}

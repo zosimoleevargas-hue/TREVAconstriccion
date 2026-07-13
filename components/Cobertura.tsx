@@ -1,40 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-
-const ZONAS = ["Mexicali", "Valle de Mexicali", "Ejidos", "Zonas agrícolas"];
+import { COBERTURA_ZONAS } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function Cobertura() {
   return (
     <section id="cobertura" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-accent text-sm font-medium uppercase tracking-widest">
-            Cobertura
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
-            Zonas de cobertura
-          </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
-            Estamos donde nos necesitas.
-          </p>
-        </motion.div>
+        <SectionHeader
+          label="Cobertura"
+          title="Zonas de cobertura"
+          subtitle="Estamos donde nos necesitas."
+        />
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
+          <FadeIn x={-30} className="relative">
             <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
               <iframe
@@ -49,19 +31,14 @@ export default function Cobertura() {
                 className="rounded-2xl"
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
+          <FadeIn x={30}>
             <h3 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">
               Cubrimos toda la región
             </h3>
             <div className="space-y-4">
-              {ZONAS.map((zona) => (
+              {COBERTURA_ZONAS.map((zona) => (
                 <div
                   key={zona}
                   className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 card-hover"
@@ -76,7 +53,7 @@ export default function Cobertura() {
             <p className="text-sm text-gray-500 mt-6">
               ¿No encuentras tu zona? Contáctanos y te confirmamos la cobertura.
             </p>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

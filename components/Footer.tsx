@@ -2,23 +2,23 @@
 
 import Image from "next/image";
 import { Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { COMPANY } from "@/lib/constants";
+import { FOOTER_LINKS } from "@/lib/data";
 
 const CONTACTOS = [
-  { icon: Phone, label: "+52 686 306 2340", href: "tel:+526863062340" },
+  { icon: Phone, label: COMPANY.phone, href: `tel:${COMPANY.phoneRaw}` },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    href: "https://wa.me/526863062340",
+    href: COMPANY.whatsappUrl,
   },
   {
     icon: Mail,
-    label: "ventas@trevaconcreto.com",
-    href: "mailto:ventas@trevaconcreto.com",
+    label: COMPANY.email,
+    href: `mailto:${COMPANY.email}`,
   },
-  { icon: MapPin, label: "Poblado López Portillo, Valle de Mexicali, B.C." },
+  { icon: MapPin, label: COMPANY.address },
 ];
-
-const ENLACES = ["Inicio", "Servicios", "Calculadora", "FAQ", "Contacto"];
 
 export default function Footer() {
   return (
@@ -85,7 +85,7 @@ export default function Footer() {
               Enlaces
             </h4>
             <ul className="space-y-3">
-              {ENLACES.map((link) => (
+              {FOOTER_LINKS.map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link === "Inicio" ? "hero" : link.toLowerCase()}`}
@@ -123,7 +123,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-6 items-center">
             <a
-              href="https://instagram.com/trevaconstruccionesccccccyconcreto"
+              href={`https://instagram.com/${COMPANY.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-gray-600 hover:text-accent transition-colors"

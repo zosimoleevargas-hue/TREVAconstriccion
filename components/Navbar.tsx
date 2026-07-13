@@ -3,14 +3,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const NAV_ITEMS = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Calculadora", href: "#calculadora" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contacto", href: "#contacto" },
-];
+import { COMPANY } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/data";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,7 +46,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/526863062340"
+            href={COMPANY.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
@@ -91,7 +85,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="https://wa.me/526863062340"
+                href={COMPANY.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

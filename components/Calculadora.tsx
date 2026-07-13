@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calculator, Send } from "lucide-react";
+import { COMPANY, WHATSAPP_MESSAGE } from "@/lib/constants";
 
 export default function Calculadora() {
   const [largo, setLargo] = useState("");
@@ -22,8 +23,11 @@ export default function Calculadora() {
 
   const enviarWhatsApp = () => {
     if (resultado === null) return;
-    const mensaje = `Hola TREVA, quiero cotizar concreto:\n\nLargo: ${largo} m\nAncho: ${ancho} m\nEspesor: ${espesor} cm\nTotal: ${resultado} m³\n\n¿Me pueden dar el precio?`;
-    window.open(`https://wa.me/526863062340?text=${encodeURIComponent(mensaje).replace(/%20/g, "%0A")}`, "_blank");
+    const mensaje = WHATSAPP_MESSAGE.cotizacion({
+      largo, ancho, espesor,
+      resultado: resultado.toString(),
+    });
+    window.open(`https://wa.me/${COMPANY.phoneRaw}?text=${encodeURIComponent(mensaje).replace(/%20/g, "%0A")}`, "_blank");
   };
 
   return (

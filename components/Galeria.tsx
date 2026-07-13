@@ -1,50 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Truck,
-  Building2,
-  HardHat,
-  Grid3x3,
-  GanttChartSquare,
-  Wrench,
-  Warehouse,
-} from "lucide-react";
-
-const ITEMS = [
-  { icon: Truck, label: "Camiones revolvedores" },
-  { icon: Building2, label: "Cimentaciones" },
-  { icon: HardHat, label: "Descarga de concreto" },
-  { icon: Grid3x3, label: "Losas" },
-  { icon: GanttChartSquare, label: "Compuertas" },
-  { icon: Wrench, label: "Instalación de tuberías" },
-  { icon: Warehouse, label: "Obras terminadas" },
-];
+import { GALERIA_ITEMS } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Galeria() {
   return (
     <section id="galeria" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
-            Galería
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
-            Nuestro trabajo
-          </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
-            Conoce algunas de las obras que hemos realizado.
-          </p>
-        </motion.div>
+        <SectionHeader
+          label="Galería"
+          title="Nuestro trabajo"
+          subtitle="Conoce algunas de las obras que hemos realizado."
+        />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ITEMS.map((item, i) => {
+          {GALERIA_ITEMS.map((item, i) => {
             const Icon = item.icon;
             return (
               <motion.div

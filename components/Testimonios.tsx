@@ -3,37 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
-
-const TESTIMONIOS = [
-  {
-    name: "Ing. Carlos Rivera",
-    text: "TREVA nos ha suministrado concreto para varias obras residenciales. Siempre puntuales, buena calidad y el mejor precio de Mexicali.",
-    rating: 5,
-    initials: "CR",
-    role: "Ingeniero Civil",
-  },
-  {
-    name: "Arq. Laura Méndez",
-    text: "Los recomiendo ampliamente. Su asesoría técnica me ayudó a elegir la resistencia ideal para mi proyecto. El concreto llegó a tiempo y en excelente estado.",
-    rating: 5,
-    initials: "LM",
-    role: "Arquitecta",
-  },
-  {
-    name: "Juan Carlos Navarro",
-    text: "Para mi nave industrial necesitaba volumen grande y lo cumplieron sin problema. Personal profesional y entregas exactas.",
-    rating: 5,
-    initials: "JN",
-    role: "Empresario",
-  },
-  {
-    name: "María Elena Soto",
-    text: "Excelente servicio para mi casa. Me explicaron todo el proceso, el concreto llegó puntual y los muchachos muy amables.",
-    rating: 5,
-    initials: "MS",
-    role: "Cliente Residencial",
-  },
-];
+import { TESTIMONIOS } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const variants = {
   enter: (dir: number) => ({ x: dir > 0 ? 200 : -200, opacity: 0 }),
@@ -60,20 +31,10 @@ export default function Testimonios() {
   return (
     <section id="testimonios" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
-            Testimonios
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
-            Lo que dicen nuestros clientes
-          </h2>
-        </motion.div>
+        <SectionHeader
+          label="Testimonios"
+          title="Lo que dicen nuestros clientes"
+        />
 
         <div className="max-w-2xl mx-auto relative">
           <Quote className="absolute -top-4 -left-4 text-accent/10" size={48} />

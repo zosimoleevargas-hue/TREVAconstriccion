@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Calculator, MessageCircle, ShieldCheck } from "lucide-react";
+import { COMPANY } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -60,7 +61,7 @@ export default function Hero() {
                 Cotiza gratis
               </motion.a>
               <motion.a
-                href="https://wa.me/526863062340"
+                href={COMPANY.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}

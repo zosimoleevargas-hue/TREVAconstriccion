@@ -3,33 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
-const FAQS = [
-  {
-    q: "¿Cuál es el pedido mínimo?",
-    a: "No manejamos pedido mínimo, atendemos proyectos de cualquier tamaño.",
-  },
-  {
-    q: "¿Entregan el mismo día?",
-    a: "Sí, entregamos el mismo día.",
-  },
-  {
-    q: "¿Qué resistencia de concreto manejan?",
-    a: "Manejamos resistencias desde f'c 150 hasta f'c 250 kg/cm², según las necesidades de tu proyecto.",
-  },
-  {
-    q: "¿Atienden obras grandes?",
-    a: "Sí, tenemos capacidad para suministrar grandes volúmenes para desarrollos industriales, comerciales y residenciales.",
-  },
-  {
-    q: "¿Cotizan sin compromiso?",
-    a: "Por supuesto. Solicita tu cotización por WhatsApp, teléfono o formulario y te responderemos el mismo día.",
-  },
-  {
-    q: "¿Dan factura?",
-    a: "Sí, emitimos factura fiscal para todos nuestros pedidos.",
-  },
-];
+import { FAQS } from "@/lib/data";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 function AccordionItem({ item }: { item: { q: string; a: string } }) {
   const [open, setOpen] = useState(false);
@@ -83,23 +58,11 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-accent text-sm font-medium uppercase tracking-widest">
-            FAQ
-          </span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-3 tracking-tight">
-            Preguntas frecuentes
-          </h2>
-          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-            Resolvemos tus dudas antes de que las tengas.
-          </p>
-        </motion.div>
+        <SectionHeader
+          label="FAQ"
+          title="Preguntas frecuentes"
+          subtitle="Resolvemos tus dudas antes de que las tengas."
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,43 +1,25 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Building2, Shield, Truck } from "lucide-react";
-
-const VALORES = [
-  { icon: Truck, label: "Entregas puntuales" },
-  { icon: Shield, label: "Calidad garantizada" },
-  { icon: Building2, label: "Todo tipo de obra" },
-];
+import { VALORES } from "@/lib/data";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function QuienesSomos() {
   return (
     <section id="nosotros" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
-                <img
-                  src="/camion-mezcla.jpg"
-                  alt="Camión revolvedor TREVA"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          <FadeIn x={-30} className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/camion-mezcla.jpg"
+                alt="Camión revolvedor TREVA"
+                className="w-full h-full object-cover"
+              />
             </div>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
+          <FadeIn x={30}>
             <span className="text-accent text-sm font-medium uppercase tracking-widest">
               Nosotros
             </span>
@@ -73,7 +55,7 @@ export default function QuienesSomos() {
                 );
               })}
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

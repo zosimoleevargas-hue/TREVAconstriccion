@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { COMPANY, WHATSAPP_MESSAGE } from "@/lib/constants";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const schema = z.object({
   nombre: z.string().min(2, "Tu nombre es obligatorio"),
@@ -15,21 +17,21 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const DATOS = [
-  { icon: Phone, label: "Teléfono", value: "+52 686 306 2340", href: "tel:+526863062340" },
+  { icon: Phone, label: "Teléfono", value: COMPANY.phone, href: `tel:${COMPANY.phoneRaw}` },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+52 686 306 2340",
-    href: "https://wa.me/526863062340",
+    value: COMPANY.phone,
+    href: COMPANY.whatsappUrl,
   },
   {
     icon: Mail,
     label: "Email",
-    value: "ventas@trevaconcreto.com",
-    href: "mailto:ventas@trevaconcreto.com",
+    value: COMPANY.email,
+    href: `mailto:${COMPANY.email}`,
   },
-  { icon: MapPin, label: "Ubicación", value: "Poblado López Portillo, Valle de Mexicali, B.C." },
-  { icon: Clock, label: "Horario", value: "Lun - Sáb: 7:00 - 15:00" },
+  { icon: MapPin, label: "Ubicación", value: COMPANY.address },
+  { icon: Clock, label: "Horario", value: COMPANY.hours },
 ];
 
 export default function Contacto() {
@@ -42,9 +44,9 @@ export default function Contacto() {
   });
 
   const enviarWhatsApp = (data: FormData) => {
-    const texto = `Hola TREVA, soy ${data.nombre}.\n\nTel: ${data.telefono}\n\n${data.mensaje}`;
+    const texto = WHATSAPP_MESSAGE.cotizacion(data);
     window.open(
-      `https://wa.me/526863062340?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
+      `https://wa.me/${COMPANY.phoneRaw}?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
       "_blank"
     );
   };
@@ -56,23 +58,12 @@ export default function Contacto() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary text-sm font-medium uppercase tracking-widest">
-            Contacto
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mt-3 tracking-tight">
-            Solicita tu cotización
-          </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
-            Sin compromiso. Te respondemos el mismo día.
-          </p>
-        </motion.div>
+        <SectionHeader
+          label="Contacto"
+          title="Solicita tu cotización"
+          subtitle="Sin compromiso. Te respondemos el mismo día."
+          dark
+        />
 
         <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           <motion.div
