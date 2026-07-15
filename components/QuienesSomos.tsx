@@ -45,9 +45,9 @@ export default function QuienesSomos() {
                 return (
                   <div
                     key={v.label}
-                    className="group p-5 rounded-2xl bg-gray-50 border border-gray-100 text-center card-hover"
+                    className="group p-5 rounded-2xl bg-gray-50 border border-gray-100 text-center card-hover hover:border-accent/30 card-shadow transition-all duration-[250ms]"
                   >
-                    <Icon className="text-accent mx-auto mb-3 group-hover:scale-110 transition-transform" size={24} />
+                    <Icon className="text-accent mx-auto mb-1.5 group-hover:scale-110 transition-transform duration-[250ms]" size={38} strokeWidth={1.5} />
                     <p className="text-sm font-semibold text-gray-800">
                       {v.label}
                     </p>
