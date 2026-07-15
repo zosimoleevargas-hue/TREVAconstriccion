@@ -28,12 +28,14 @@ export default function Navbar() {
         <a href="#hero" className="flex items-center shrink-0">
           <motion.div
             animate={{
-              scale: [1, 1.03, 1],
+              x: [0, 3, 0, -2, 0],
+              y: [0, -1, 0, 0.5, 0],
             }}
             transition={{
-              duration: 4,
+              duration: 7,
               repeat: Infinity,
               ease: "easeInOut",
+              times: [0, 0.25, 0.5, 0.75, 1],
             }}
           >
             <img
