@@ -8,18 +8,16 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
-
-      <div className="absolute inset-0 opacity-[0.03]"
+      <div className="absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: "radial-gradient(circle at 25px 25px, white 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 25px 25px, #1B2A4A 1px, transparent 0)",
           backgroundSize: "50px 50px",
         }}
       />
 
-      <div className="absolute top-0 -left-40 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]" />
+      <div className="absolute top-0 -left-40 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 -right-40 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 w-full">
@@ -39,12 +37,12 @@ export default function Hero() {
               Suministro en Mexicali y Valle
             </motion.span>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6 text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 text-balance">
               Concreto Premezclado{" "}
               <span className="text-accent">de primera calidad</span> para tu obra
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
               Llevamos concreto de alta resistencia a tu proyecto con entregas
               puntuales en Mexicali y todo el Valle. Residencial, comercial,
               industrial y agrícola.
@@ -66,7 +64,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 glass-dark text-gray-300 px-8 py-4 rounded-full text-base font-medium hover:text-accent hover:border-accent/40 transition-all"
+                className="inline-flex items-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-full text-base font-medium border border-gray-200 shadow-sm hover:text-accent hover:border-accent/40 hover:shadow-md transition-all"
               >
                 <MessageCircle size={18} />
                 WhatsApp
@@ -77,7 +75,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="flex items-center gap-6 mt-10 pt-8 border-t border-white/5"
+              className="flex flex-wrap items-center gap-x-6 gap-y-3 mt-10 pt-8 border-t border-gray-200"
             >
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <ShieldCheck size={16} className="text-accent" />
@@ -108,9 +106,9 @@ export default function Hero() {
             }}
             className="relative hidden lg:block"
           >
-            <div className="relative w-full aspect-[4/3] border border-white/5 shadow-2xl">
+            <div className="relative w-full aspect-[4/3] border border-gray-200 shadow-xl rounded-3xl">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
                 <video
                   autoPlay
                   loop
@@ -136,20 +134,20 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 glass-dark rounded-2xl px-5 py-3 z-30"
+              className="absolute -bottom-6 -left-6 bg-white rounded-2xl px-5 py-3 z-30 shadow-lg border border-gray-100"
             >
-              <p className="text-lg font-bold text-white">3+</p>
-              <p className="text-xs text-gray-400 whitespace-nowrap">años de experiencia</p>
+              <p className="text-lg font-bold text-accent">3+</p>
+              <p className="text-xs text-gray-500 whitespace-nowrap">años de experiencia</p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.5 }}
-              className="absolute -top-6 -right-6 glass-dark rounded-2xl px-5 py-3 z-30"
+              className="absolute -top-6 -right-6 bg-white rounded-2xl px-5 py-3 z-30 shadow-lg border border-gray-100"
             >
-              <p className="text-lg font-bold text-white">+50</p>
-              <p className="text-xs text-gray-400 whitespace-nowrap">proyectos realizados</p>
+              <p className="text-lg font-bold text-accent">+50</p>
+              <p className="text-xs text-gray-500 whitespace-nowrap">proyectos realizados</p>
             </motion.div>
           </motion.div>
         </div>
@@ -160,7 +158,7 @@ export default function Hero() {
           transition={{ delay: 1.4 }}
           className="flex justify-center mt-20"
         >
-          <a href="#nosotros" className="text-gray-500 hover:text-accent transition-colors animate-bounce">
+          <a href="#nosotros" className="text-gray-400 hover:text-accent transition-colors animate-bounce">
             <ArrowDown size={24} />
           </a>
         </motion.div>

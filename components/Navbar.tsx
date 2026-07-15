@@ -26,11 +26,22 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         <a href="#hero" className="flex items-center shrink-0">
-          <img
-            src="/logo-treva.png"
-            alt="TREVA Concreto Premezclado"
-            className="h-14 w-auto drop-shadow-lg"
-          />
+          <motion.div
+            animate={{
+              scale: [1, 1.04, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <img
+              src="/logo-treva.png"
+              alt="TREVA Concreto Premezclado"
+              className="h-16 w-auto"
+            />
+          </motion.div>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -39,7 +50,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={`text-sm font-medium transition-colors ${
-                scrolled ? "text-gray-600 hover:text-accent" : "text-gray-300 hover:text-white"
+                scrolled ? "text-gray-600 hover:text-accent" : "text-gray-700 hover:text-accent"
               }`}
             >
               {item.label}
@@ -57,7 +68,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className={`md:hidden ${scrolled ? "text-gray-700" : "text-white"}`}
+          className={`md:hidden ${scrolled ? "text-gray-700" : "text-gray-700"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Abrir menú"
         >

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SERVICIOS } from "@/lib/data";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -25,9 +26,27 @@ export default function Servicios() {
         <SectionHeader
           label="Servicios"
           title="Todo el concreto que necesitas"
-          subtitle="Soluciones integrales para cualquier tipo de proyecto."
-          badge="Respaldados por Holcim"
+          subtitle="Del cimiento al acabado, para toda tu obra."
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+        >
+          <span className="text-sm font-medium text-gray-500">
+            Respaldados por
+          </span>
+          <Image
+            src="/holcim-logo.svg"
+            alt="Holcim"
+            width={100}
+            height={24}
+            className="h-6 w-auto opacity-70"
+          />
+        </motion.div>
 
         <motion.div
           variants={containerVariants}
@@ -44,8 +63,8 @@ export default function Servicios() {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300">
-                  <s.icon className="text-accent" size={22} />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300">
+                  <s.icon className="text-accent" size={26} />
                 </div>
                 <p className="text-sm font-semibold text-gray-800">
                   {s.title}

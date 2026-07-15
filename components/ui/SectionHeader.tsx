@@ -14,11 +14,11 @@ export default function SectionHeader({
       <span className={`text-sm font-medium uppercase tracking-widest ${dark ? "text-accent" : "text-primary"}`}>
         {label}
       </span>
-      <h2 className={`text-4xl sm:text-5xl font-bold mt-3 tracking-tight ${dark ? "text-white" : "text-gray-900"}`}>
+      <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 tracking-tight ${dark ? "text-white" : "text-gray-900"}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 max-w-2xl mx-auto text-lg ${dark ? "text-gray-400" : "text-gray-500"}`}>
+        <p className={`mt-4 max-w-2xl mx-auto text-base sm:text-lg ${dark ? "text-gray-400" : "text-gray-500"}`}>
           {subtitle}
         </p>
       )}

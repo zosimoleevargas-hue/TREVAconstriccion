@@ -29,9 +29,9 @@ export default function Footer() {
             <Image
               src="/logo-treva.png"
               alt="TREVA Concreto Premezclado"
-              width={140}
-              height={46}
-              className="h-14 w-auto mb-4"
+              width={180}
+              height={59}
+              className="h-16 w-auto mb-5"
             />
             <p className="text-sm leading-relaxed text-gray-500 mb-6">
               Venta y distribución de concreto premezclado en Mexicali y Valle
