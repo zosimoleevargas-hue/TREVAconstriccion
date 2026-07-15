@@ -12,7 +12,7 @@ function AccordionItem({ item }: { item: { q: string; a: string } }) {
   return (
     <div
       className={`border border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 ${
-        open ? "shadow-sm bg-white" : "bg-white"
+        open ? "card-shadow bg-white" : "bg-white hover:border-gray-200"
       }`}
     >
       <button

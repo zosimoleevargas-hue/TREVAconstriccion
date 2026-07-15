@@ -115,9 +115,9 @@ export default function Calculadora() {
 
                 <motion.button
                   onClick={calcular}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-accent text-white py-3 rounded-xl font-medium hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="btn-lift w-full bg-accent text-white py-3.5 rounded-xl font-semibold hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
                 >
                   Calcular metros cúbicos
                 </motion.button>
@@ -146,9 +146,9 @@ export default function Calculadora() {
                   animate={{ opacity: 1 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-medium hover:bg-green-600 transition-colors shadow-lg shadow-green-500/25"
+                  className="btn-lift w-full inline-flex items-center justify-center gap-2.5 bg-green-500 text-white py-3.5 px-4 rounded-xl font-semibold hover:bg-green-600 transition-all shadow-lg shadow-green-500/25 whitespace-nowrap text-sm sm:text-base"
                 >
-                  <Send size={16} />
+                  <Send size={16} className="shrink-0" />
                   Enviar cotización por WhatsApp
                 </motion.button>
               )}

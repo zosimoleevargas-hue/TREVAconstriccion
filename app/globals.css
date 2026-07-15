@@ -50,6 +50,32 @@
   }
 }
 
+@utility card-shadow {
+  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.08), 0 1px 4px -1px rgba(0, 0, 0, 0.04);
+}
+
+@utility card-shadow-lg {
+  box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.12), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+}
+
+@utility btn-lift {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    transform: translateY(-2px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@utility video-premium {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    box-shadow: 0 20px 60px -16px rgba(0, 0, 0, 0.25);
+    transform: scale(1.01);
+  }
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);

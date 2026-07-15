@@ -32,10 +32,10 @@ export default function Proceso() {
                 className="relative flex flex-col items-center text-center"
               >
                 <div className="relative mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white flex items-center justify-center shadow-lg shadow-accent/25">
-                    <paso.icon size={22} />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white flex items-center justify-center shadow-lg shadow-accent/25 group-hover:scale-105 transition-transform duration-300">
+                    <paso.icon size={24} />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white border-2 border-accent flex items-center justify-center">
+                  <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-white border-2 border-accent flex items-center justify-center shadow-sm">
                     <span className="text-[10px] font-bold text-accent">
                       {paso.number}
                     </span>

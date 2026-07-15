@@ -48,7 +48,7 @@ export default function Testimonios() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.3, ease: "easeInOut" as const }}
-                className="relative bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 shadow-sm"
+                className="relative bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 card-shadow-lg"
               >
                 <div className="flex items-center gap-1 mb-6">
                   {Array.from({

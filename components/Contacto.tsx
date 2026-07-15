@@ -159,9 +159,9 @@ export default function Contacto() {
                 </div>
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center gap-2 bg-accent text-white py-3.5 rounded-xl font-medium hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="btn-lift w-full inline-flex items-center justify-center gap-2.5 bg-accent text-white py-3.5 rounded-xl font-semibold hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
                 >
                   <Send size={16} />
                   Enviar cotización

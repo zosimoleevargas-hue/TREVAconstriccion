@@ -34,7 +34,7 @@ export default function Servicios() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+              className="flex flex-wrap items-center justify-center gap-3 mb-12"
         >
           <span className="text-sm font-medium text-gray-500">
             Respaldados por
@@ -42,9 +42,9 @@ export default function Servicios() {
           <Image
             src="/holcim-logo.svg"
             alt="Holcim"
-            width={100}
-            height={24}
-            className="h-6 w-auto opacity-70"
+            width={110}
+            height={26}
+            className="h-7 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
           />
         </motion.div>
 

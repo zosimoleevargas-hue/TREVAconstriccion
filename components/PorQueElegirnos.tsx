@@ -43,8 +43,8 @@ export default function PorQueElegirnos() {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <r.icon className="text-accent" size={22} />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300">
+                  <r.icon className="text-accent" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {r.title}

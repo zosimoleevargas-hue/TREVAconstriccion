@@ -18,20 +18,20 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100/50"
+          ? "bg-white/70 backdrop-blur-2xl shadow-md border-b border-gray-100/80"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <a href="#hero" className="flex items-center shrink-0">
           <motion.div
             animate={{
-              scale: [1, 1.04, 1],
+              scale: [1, 1.03, 1],
             }}
             transition={{
-              duration: 3,
+              duration: 4,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -39,7 +39,7 @@ export default function Navbar() {
             <img
               src="/logo-treva.png"
               alt="TREVA Concreto Premezclado"
-              className="h-16 w-auto"
+              className="h-16 lg:h-18 w-auto"
             />
           </motion.div>
         </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
             href={COMPANY.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
+            className="btn-lift inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
           >
             <MessageCircle size={16} />
             Cotizar
@@ -82,7 +82,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-lg overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-2xl border-t border-gray-100 shadow-lg overflow-hidden"
           >
             <div className="px-4 py-6 flex flex-col gap-3">
               {NAV_ITEMS.map((item) => (

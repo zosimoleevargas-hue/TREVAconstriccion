@@ -41,7 +41,7 @@ export default function Cobertura() {
               {COBERTURA_ZONAS.map((zona) => (
                 <div
                   key={zona}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 card-hover"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 card-hover card-shadow"
                 >
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center shrink-0">
                     <MapPin className="text-accent" size={18} />

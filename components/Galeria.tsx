@@ -24,8 +24,8 @@ export default function Galeria() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{
-                  duration: 0.4,
-                  delay: i * 0.05,
+                  duration: 0.5,
+                  delay: i * 0.08,
                   ease: "easeOut" as const,
                 }}
                 className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900 cursor-pointer"
