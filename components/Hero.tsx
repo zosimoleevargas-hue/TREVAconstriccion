@@ -116,7 +116,8 @@ export default function Hero() {
                   loop
                   muted
                   playsInline
-                  poster="/hero-treva.jpg"
+                  preload="none"
+                  poster="/camion-mezcla.jpg"
                   className="w-full h-full object-cover"
                 >
                   <source src="/treva-camion.mp4" type="video/mp4" />
