@@ -56,7 +56,7 @@ export const SERVICIOS: Service[] = [
   { icon: Grid3x3, title: "Cimentaciones y zapatas" },
   { icon: Layout, title: "Muros estructurales" },
   { icon: Car, title: "Estacionamientos" },
-  { icon: Road, title: "Pavimentos y senderos" },
+  { icon: Road, title: "Pavimentos, senderos y más" },
 ];
 
 export const RAZONES: Razon[] = [
