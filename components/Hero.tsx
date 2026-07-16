@@ -38,8 +38,10 @@ export default function Hero() {
               Suministro en Mexicali y Valle
             </motion.span>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-hero-title leading-[1.1] tracking-tight mb-6 text-balance">
-                Concreto Premezclado de primera calidad para tu obra
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 text-balance">
+                <span className="text-hero-title">Concreto Premezclado</span>{" "}
+                <span className="text-accent">de primera calidad</span>{" "}
+                <span className="text-hero-title">para tu obra</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
