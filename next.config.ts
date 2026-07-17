@@ -2,12 +2,12 @@ import type { NextConfig } from "next";
 
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://www.google-analytics.com",
   "font-src 'self' https://fonts.gstatic.com",
   "frame-src https://www.google.com",
-  "connect-src 'self' https://fonts.googleapis.com",
+  "connect-src 'self' https://fonts.googleapis.com https://www.google-analytics.com https://analytics.google.com",
   "form-action 'self'",
   "frame-ancestors 'none'",
   "base-uri 'self'",

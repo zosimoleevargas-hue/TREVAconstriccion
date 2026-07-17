@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { COMPANY } from "@/lib/constants";
 
@@ -9,6 +10,9 @@ const inter = Inter({
   preload: true,
   variable: "--font-inter",
 });
+
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gscVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://treva-concreto.vercel.app"),
@@ -57,6 +61,7 @@ export const metadata: Metadata = {
     canonical: "https://treva-concreto.vercel.app",
   },
   other: {
+    ...(gscVerification ? { "google-site-verification": gscVerification } : {}),
     "theme-color": "#1B2A4A",
   },
 };
@@ -160,6 +165,7 @@ export default function RootLayout({
           Saltar al contenido
         </a>
         {children}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );
