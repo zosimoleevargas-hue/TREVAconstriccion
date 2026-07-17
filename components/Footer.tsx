@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Image
-              src="/logo-treva.svg"
+              src="/logo-treva.png"
               alt="TREVA Concreto Premezclado"
               width={180}
               height={59}
