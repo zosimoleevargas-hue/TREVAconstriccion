@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Globe, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { COMPANY } from "@/lib/constants";

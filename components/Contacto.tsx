@@ -125,7 +125,11 @@ export default function Contacto() {
                 noValidate
               >
                 <div>
+                  <label htmlFor="contacto-nombre" className="sr-only">
+                    Tu nombre
+                  </label>
                   <input
+                    id="contacto-nombre"
                     type="text"
                     placeholder="Tu nombre"
                     {...register("nombre")}
@@ -136,7 +140,11 @@ export default function Contacto() {
                   )}
                 </div>
                 <div>
+                  <label htmlFor="contacto-telefono" className="sr-only">
+                    Tu teléfono
+                  </label>
                   <input
+                    id="contacto-telefono"
                     type="tel"
                     placeholder="Tu teléfono"
                     {...register("telefono")}
@@ -147,7 +155,11 @@ export default function Contacto() {
                   )}
                 </div>
                 <div>
+                  <label htmlFor="contacto-mensaje" className="sr-only">
+                    ¿Qué necesitas?
+                  </label>
                   <textarea
+                    id="contacto-mensaje"
                     placeholder="¿Qué necesitas? (ej: 10 m³ para losa)"
                     rows={4}
                     {...register("mensaje")}

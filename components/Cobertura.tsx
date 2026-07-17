@@ -1,5 +1,3 @@
-"use client";
-
 import { MapPin } from "lucide-react";
 import { COBERTURA_ZONAS } from "@/lib/data";
 import SectionHeader from "@/components/ui/SectionHeader";

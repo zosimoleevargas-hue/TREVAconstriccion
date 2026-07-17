@@ -55,9 +55,28 @@ function AccordionItem({ item }: { item: { q: string; a: string } }) {
 }
 
 export default function FAQ() {
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-24 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <SectionHeader
           label="FAQ"
           title="Preguntas frecuentes"
