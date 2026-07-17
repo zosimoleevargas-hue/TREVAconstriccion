@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://treva-concreto.vercel.app",
   },
+  other: {
+    "theme-color": "#1B2A4A",
+  },
 };
 
 export default function RootLayout({
@@ -105,6 +108,37 @@ export default function RootLayout({
           { "@type": "City", name: "Valle de Mexicali" },
         ],
       },
+      {
+        "@type": "ContactPoint",
+        name: "Atención a Clientes TREVA",
+        telephone: COMPANY.phone,
+        contactType: "sales",
+        availableLanguage: ["Spanish", "English"],
+        areaServed: ["MX-BCN"],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://treva-concreto.vercel.app",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicios",
+            item: "https://treva-concreto.vercel.app/#servicios",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Contacto",
+            item: "https://treva-concreto.vercel.app/#contacto",
+          },
+        ],
+      },
     ],
   };
 
@@ -118,7 +152,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <a
+          href="#main-content"
+          className="fixed -top-40 left-4 z-[60] bg-accent text-white px-4 py-2 rounded-b-lg text-sm font-medium shadow-lg focus:top-0 transition-all duration-200 outline-none"
+        >
+          Saltar al contenido
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

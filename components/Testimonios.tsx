@@ -16,6 +16,32 @@ export default function Testimonios() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const reviewLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: TESTIMONIOS.map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Review",
+        reviewBody: t.text,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: t.rating,
+          bestRating: 5,
+        },
+        author: {
+          "@type": "Person",
+          name: t.name,
+        },
+        itemReviewed: {
+          "@type": "LocalBusiness",
+          name: "TREVA Concreto",
+        },
+      },
+    })),
+  };
+
   const next = () => {
     setDirection(1);
     setCurrent((prev) => (prev + 1) % TESTIMONIOS.length);
@@ -30,6 +56,12 @@ export default function Testimonios() {
 
   return (
     <section id="testimonios" className="py-24 bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(reviewLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Testimonios"

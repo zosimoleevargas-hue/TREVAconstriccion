@@ -29,6 +29,14 @@ export default function Galeria() {
                   ease: "easeOut" as const,
                 }}
                 className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900 cursor-pointer"
+                tabIndex={0}
+                role="button"
+                aria-label={`Galería: ${item.label}`}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                  }
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">

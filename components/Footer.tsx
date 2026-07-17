@@ -15,7 +15,11 @@ const CONTACTOS = [
     label: COMPANY.email,
     href: `mailto:${COMPANY.email}`,
   },
-  { icon: MapPin, label: COMPANY.address },
+  {
+    icon: MapPin,
+    label: COMPANY.address,
+    href: "https://www.google.com/maps/search/Poblado+L%C3%B3pez+Portillo+Valle+de+Mexicali+B.C.",
+  },
 ];
 
 export default function Footer() {
