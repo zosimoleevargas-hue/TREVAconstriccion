@@ -39,7 +39,7 @@ export default function Navbar() {
             }}
           >
             <img
-              src="/logo-treva.png"
+              src="/logo-treva.svg"
               alt="TREVA Concreto Premezclado"
               className="h-16 lg:h-18 w-auto"
             />
