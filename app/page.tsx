@@ -1,4 +1,5 @@
-"use client";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -7,14 +8,27 @@ import Servicios from "@/components/Servicios";
 import PorQueElegirnos from "@/components/PorQueElegirnos";
 import Galeria from "@/components/Galeria";
 import Proceso from "@/components/Proceso";
-import Calculadora from "@/components/Calculadora";
 import Cobertura from "@/components/Cobertura";
-import Testimonios from "@/components/Testimonios";
-import FAQ from "@/components/FAQ";
-import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import ScrollToTop from "@/components/ScrollToTop";
+
+const Calculadora = dynamic(() => import("@/components/Calculadora"), {
+  loading: () => <div className="h-[500px]" aria-hidden="true" />,
+});
+
+const Testimonios = dynamic(() => import("@/components/Testimonios"), {
+  loading: () => <div className="h-[350px]" aria-hidden="true" />,
+});
+
+const FAQ = dynamic(() => import("@/components/FAQ"), {
+  loading: () => <div className="h-[300px]" aria-hidden="true" />,
+});
+
+const Contacto = dynamic(() => import("@/components/Contacto"), {
+  loading: () => <div className="h-[600px]" aria-hidden="true" />,
+});
+
+const ScrollToTop = dynamic(() => import("@/components/ScrollToTop"));
 
 export default function Home() {
   return (
@@ -27,15 +41,25 @@ export default function Home() {
         <PorQueElegirnos />
         <Galeria />
         <Proceso />
-        <Calculadora />
+        <Suspense fallback={<div className="h-[500px]" aria-hidden="true" />}>
+          <Calculadora />
+        </Suspense>
         <Cobertura />
-        <Testimonios />
-        <FAQ />
-        <Contacto />
+        <Suspense fallback={<div className="h-[350px]" aria-hidden="true" />}>
+          <Testimonios />
+        </Suspense>
+        <Suspense fallback={<div className="h-[300px]" aria-hidden="true" />}>
+          <FAQ />
+        </Suspense>
+        <Suspense fallback={<div className="h-[600px]" aria-hidden="true" />}>
+          <Contacto />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />
-      <ScrollToTop />
+      <Suspense fallback={null}>
+        <ScrollToTop />
+      </Suspense>
     </>
   );
 }

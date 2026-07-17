@@ -6,6 +6,7 @@ import { COMPANY } from "@/lib/constants";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  preload: true,
   variable: "--font-inter",
 });
 

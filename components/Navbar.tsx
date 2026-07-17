@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
@@ -38,10 +39,13 @@ export default function Navbar() {
               times: [0, 0.3, 0.5, 0.8, 1],
             }}
           >
-            <img
+            <Image
               src="/logo-treva.png"
               alt="TREVA Concreto Premezclado"
+              width={180}
+              height={180}
               className="h-16 lg:h-18 w-auto"
+              priority
             />
           </motion.div>
         </a>

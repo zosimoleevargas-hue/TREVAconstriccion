@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { VALORES } from "@/lib/data";
 import FadeIn from "@/components/ui/FadeIn";
 
@@ -11,10 +12,12 @@ export default function QuienesSomos() {
           <FadeIn x={-30} className="relative">
             <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-accent/5 rounded-3xl blur-xl" />
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
-              <img
+              <Image
                 src="/camion-mezcla.jpg"
                 alt="Camión revolvedor TREVA"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </FadeIn>
