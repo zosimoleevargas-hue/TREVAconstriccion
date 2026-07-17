@@ -132,7 +132,7 @@ export default function Footer() {
               Instagram
             </a>
             <a
-              href="#"
+              href="/aviso-de-privacidad"
               className="text-gray-600 hover:text-accent transition-colors"
             >
               Aviso de privacidad
