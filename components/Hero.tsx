@@ -28,15 +28,17 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" as const }}
           >
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-accent/20"
+              className="flex items-center gap-3 mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Suministro en Mexicali y Valle
-            </motion.span>
+              <span className="w-[3px] h-9 bg-accent rounded-[1px]" />
+              <span className="text-accent text-sm font-semibold uppercase tracking-[0.15em] leading-tight">
+                Cobertura: Mexicali y Valle
+              </span>
+            </motion.div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 text-balance">
                 <span className="text-hero-title">Concreto Premezclado</span>{" "}
