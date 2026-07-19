@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Calculator, MessageCircle, ShieldCheck } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
@@ -110,21 +111,17 @@ export default function Hero() {
             }}
             className="relative hidden lg:block"
           >
-            <div className="video-premium relative w-full aspect-[4/3] border border-white/60 shadow-xl rounded-3xl overflow-hidden">
+            <div className="relative w-full aspect-[4/3] border border-white/60 shadow-xl rounded-3xl overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-10" />
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster="/camion-mezcla.jpg"
-                  className="w-full h-full object-cover"
-                  aria-label="Camión revolvedor TREVA descargando concreto premezclado"
-                >
-                  <source src="/treva-camion.mp4" type="video/mp4" />
-                </video>
+                <Image
+                  src="/camion-mezcla.jpg"
+                  alt="Camión revolvedor TREVA descargando concreto premezclado"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
               <div className="absolute bottom-6 left-6 z-20">
                 <p className="text-white font-bold text-2xl tracking-tight drop-shadow-xl">
