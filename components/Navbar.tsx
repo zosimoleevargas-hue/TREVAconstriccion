@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,12 +27,13 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <a href="#hero" className="flex items-center shrink-0">
-          <img
-            src="/logo-treva.svg"
+          <Image
+            src="/logo-treva.png"
             alt="TREVA Concreto Premezclado"
             width={180}
-            height={180}
+            height={59}
             className="h-16 lg:h-18 w-auto"
+            priority
           />
         </a>
 
