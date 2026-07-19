@@ -24,7 +24,7 @@ const CONTACTOS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-400">
+    <footer className="bg-gray-50 text-gray-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-widest mb-5">
+            <h4 className="text-primary text-xs font-semibold uppercase tracking-widest mb-5">
               Contacto
             </h4>
             <ul className="space-y-4">
@@ -67,12 +67,12 @@ export default function Footer() {
                         }
                         className="flex items-center gap-3 text-sm hover:text-accent transition-colors group"
                       >
-                        <Icon size={14} className="text-gray-600 group-hover:text-accent transition-colors" />
+                        <Icon size={14} className="text-gray-400 group-hover:text-accent transition-colors" />
                         {c.label}
                       </a>
                     ) : (
                       <span className="flex items-center gap-3 text-sm">
-                        <Icon size={14} className="text-gray-600" />
+                        <Icon size={14} className="text-gray-400" />
                         {c.label}
                       </span>
                     )}
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-widest mb-5">
+            <h4 className="text-primary text-xs font-semibold uppercase tracking-widest mb-5">
               Enlaces
             </h4>
             <ul className="space-y-3">
@@ -101,13 +101,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-widest mb-5">
+            <h4 className="text-primary text-xs font-semibold uppercase tracking-widest mb-5">
               Horarios
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex justify-between">
                 <span className="text-gray-500">Lun - Sáb</span>
-                <span className="text-gray-300">7:00 - 15:00</span>
+                <span className="text-gray-700">7:00 - 15:00</span>
               </li>
               <li className="flex justify-between">
                 <span className="text-gray-500">Domingo</span>
@@ -118,9 +118,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-800/50">
+      <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             &copy; {new Date().getFullYear()} TREVA Concreto. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 items-center">
@@ -128,14 +128,14 @@ export default function Footer() {
               href={`https://instagram.com/${COMPANY.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-600 hover:text-accent transition-colors"
+              className="flex items-center gap-1.5 text-gray-500 hover:text-accent transition-colors"
             >
               <Globe size={14} />
               Instagram
             </a>
             <a
               href="/aviso-de-privacidad"
-              className="text-gray-600 hover:text-accent transition-colors"
+              className="text-gray-500 hover:text-accent transition-colors"
             >
               Aviso de privacidad
             </a>

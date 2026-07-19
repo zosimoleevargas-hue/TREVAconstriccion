@@ -52,17 +52,13 @@ export default function Contacto() {
   };
 
   return (
-    <section id="contacto" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gray-950" />
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
+    <section id="contacto" className="py-24 relative overflow-hidden bg-gray-50">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Contacto"
           title={<>Solicita tu <span className="text-accent">cotización</span></>}
           subtitle="Sin compromiso. Te respondemos el mismo día."
-          dark
         />
 
         <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -76,7 +72,7 @@ export default function Contacto() {
             {DATOS.map((d) => (
               <div
                 key={d.label}
-                className="glass-dark rounded-2xl p-5 flex items-center gap-4 hover:border-accent/20 transition-all"
+                className="bg-white rounded-2xl p-5 flex items-center gap-4 border border-gray-200 card-shadow hover:border-accent/20 transition-all"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
                   <d.icon className="text-accent" size={22} />
@@ -94,12 +90,12 @@ export default function Contacto() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="text-white font-medium hover:text-accent transition-colors"
+                      className="text-gray-800 font-medium hover:text-accent transition-colors"
                     >
                       {d.value}
                     </a>
                   ) : (
-                    <p className="text-white font-medium">{d.value}</p>
+                    <p className="text-gray-800 font-medium">{d.value}</p>
                   )}
                 </div>
               </div>
@@ -112,11 +108,11 @@ export default function Contacto() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="glass-dark rounded-3xl p-8">
-              <h3 className="text-white text-lg font-semibold mb-2">
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 card-shadow-lg">
+              <h3 className="text-primary text-lg font-semibold mb-2">
                 Envíanos un <span className="text-accent">mensaje</span>
               </h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <p className="text-gray-500 text-sm mb-6">
                 Cuéntanos tu proyecto y te cotizamos.
               </p>
               <form
@@ -133,10 +129,10 @@ export default function Contacto() {
                     type="text"
                     placeholder="Tu nombre"
                     {...register("nombre")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   />
                   {errors.nombre && (
-                    <p className="text-red-400 text-xs mt-1">{errors.nombre.message}</p>
+                    <p className="text-red-500 text-xs mt-1">{errors.nombre.message}</p>
                   )}
                 </div>
                 <div>
@@ -148,10 +144,10 @@ export default function Contacto() {
                     type="tel"
                     placeholder="Tu teléfono"
                     {...register("telefono")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   />
                   {errors.telefono && (
-                    <p className="text-red-400 text-xs mt-1">{errors.telefono.message}</p>
+                    <p className="text-red-500 text-xs mt-1">{errors.telefono.message}</p>
                   )}
                 </div>
                 <div>
@@ -163,10 +159,10 @@ export default function Contacto() {
                     placeholder="¿Qué necesitas? (ej: 10 m³ para losa)"
                     rows={4}
                     {...register("mensaje")}
-                    className="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-gray-700 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
                   />
                   {errors.mensaje && (
-                    <p className="text-red-400 text-xs mt-1">{errors.mensaje.message}</p>
+                    <p className="text-red-500 text-xs mt-1">{errors.mensaje.message}</p>
                   )}
                 </div>
                 <motion.button
