@@ -46,7 +46,7 @@ export default function PorQueElegirnos() {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:from-accent/20 group-hover:to-accent/10 transition-all duration-300">
                   <r.icon className="text-accent" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-primary mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {r.title}
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">

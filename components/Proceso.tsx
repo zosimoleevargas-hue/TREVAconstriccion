@@ -41,7 +41,7 @@ export default function Proceso() {
                     </span>
                   </div>
                 </div>
-                <h3 className="text-sm font-semibold text-primary mb-2">
+                <h3 className="text-sm font-semibold text-gray-900 mb-2">
                   {paso.title}
                 </h3>
                 <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">

@@ -24,7 +24,7 @@ export default function QuienesSomos() {
             <span className="text-accent text-sm font-medium uppercase tracking-widest">
               Nosotros
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-3 mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6 tracking-tight">
               Somos TREVA
             </h2>
 
