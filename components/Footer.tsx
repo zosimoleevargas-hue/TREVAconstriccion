@@ -29,11 +29,11 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Image
-              src="/logo-treva.png"
+              src="/logo-treva-white.svg"
               alt="TREVA Concreto Premezclado"
               width={180}
-              height={59}
-              className="h-16 w-auto mb-5"
+              height={72}
+              className="h-18 w-auto mb-5"
             />
             <p className="text-sm leading-relaxed text-gray-500 mb-6">
               Venta y distribución de concreto premezclado en Mexicali y Valle

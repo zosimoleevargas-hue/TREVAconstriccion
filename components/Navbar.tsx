@@ -44,7 +44,7 @@ export default function Navbar() {
               alt="TREVA Concreto Premezclado"
               width={180}
               height={180}
-              className="h-16 lg:h-18 w-auto"
+              className="h-18 lg:h-20 w-auto"
               priority
             />
           </motion.div>

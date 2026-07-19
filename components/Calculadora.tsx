@@ -43,7 +43,7 @@ export default function Calculadora() {
           <span className="text-accent text-sm font-medium uppercase tracking-widest">
             Calculadora
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-3 tracking-tight">
             Calcula tu concreto en segundos
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
