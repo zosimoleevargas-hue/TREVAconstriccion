@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
@@ -27,27 +26,13 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <a href="#hero" className="flex items-center shrink-0">
-          <motion.div
-            animate={{
-              x: [0, 10, 0, -6, 0],
-              rotate: [0, 0.8, 0, -0.5, 0],
-            }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              times: [0, 0.3, 0.5, 0.8, 1],
-            }}
-          >
-            <Image
-              src="/logo-treva.png"
-              alt="TREVA Concreto Premezclado"
-              width={180}
-              height={180}
-              className="h-16 lg:h-18 w-auto"
-              priority
-            />
-          </motion.div>
+          <img
+            src="/logo-treva.svg"
+            alt="TREVA Concreto Premezclado"
+            width={180}
+            height={180}
+            className="h-16 lg:h-18 w-auto"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
