@@ -10,7 +10,7 @@ export default function Galeria() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Galería"
-          title="Nuestro trabajo"
+          title={<>Nuestro <span className="text-accent">trabajo</span></>}
           subtitle="Conoce algunas de las obras que hemos realizado."
         />
 

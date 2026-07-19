@@ -65,7 +65,7 @@ export default function Testimonios() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Testimonios"
-          title="Lo que dicen nuestros clientes"
+          title={<>Lo que dicen <span className="text-accent">nuestros clientes</span></>}
         />
 
         <div className="max-w-2xl mx-auto relative">

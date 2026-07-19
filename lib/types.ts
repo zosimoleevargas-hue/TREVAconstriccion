@@ -55,7 +55,7 @@ export interface Valor {
 
 export interface SectionHeaderProps {
   label: string;
-  title: string;
+  title: string | React.ReactNode;
   subtitle?: string;
   badge?: string;
   center?: boolean;

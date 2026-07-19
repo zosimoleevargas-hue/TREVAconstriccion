@@ -24,7 +24,7 @@ export default function PorQueElegirnos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="¿Por qué TREVA?"
-          title="¿Por qué elegirnos?"
+          title={<>¿Por qué <span className="text-accent">elegirnos?</span></>}
           subtitle="Más de 3 años respaldando obras en Mexicali y el Valle."
         />
 

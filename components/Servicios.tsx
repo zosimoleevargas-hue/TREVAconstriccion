@@ -25,7 +25,7 @@ export default function Servicios() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Servicios"
-          title="Todo el concreto que necesitas"
+          title={<>Todo el concreto que <span className="text-accent">necesitas</span></>}
           subtitle="Del cimiento al acabado, para toda tu obra."
         />
 

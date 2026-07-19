@@ -79,7 +79,7 @@ export default function FAQ() {
         />
         <SectionHeader
           label="FAQ"
-          title="Preguntas frecuentes"
+          title={<>Preguntas <span className="text-accent">frecuentes</span></>}
           subtitle="Resolvemos tus dudas antes de que las tengas."
         />
 

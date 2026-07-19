@@ -60,7 +60,7 @@ export default function Contacto() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Contacto"
-          title="Solicita tu cotización"
+          title={<>Solicita tu <span className="text-accent">cotización</span></>}
           subtitle="Sin compromiso. Te respondemos el mismo día."
           dark
         />
@@ -114,7 +114,7 @@ export default function Contacto() {
           >
             <div className="glass-dark rounded-3xl p-8">
               <h3 className="text-white text-lg font-semibold mb-2">
-                Envíanos un mensaje
+                Envíanos un <span className="text-accent">mensaje</span>
               </h3>
               <p className="text-gray-400 text-sm mb-6">
                 Cuéntanos tu proyecto y te cotizamos.

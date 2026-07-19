@@ -9,7 +9,7 @@ export default function Cobertura() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Cobertura"
-          title="Zonas de cobertura"
+          title={<>Zonas de <span className="text-accent">cobertura</span></>}
           subtitle="Estamos donde nos necesitas."
         />
 
@@ -32,8 +32,8 @@ export default function Cobertura() {
           </FadeIn>
 
           <FadeIn x={30}>
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">
-              Cubrimos toda la región
+            <h3 className="text-3xl font-bold text-primary mb-8 tracking-tight">
+              Cubrimos toda la <span className="text-accent">región</span>
             </h3>
             <div className="space-y-4">
               {COBERTURA_ZONAS.map((zona) => (

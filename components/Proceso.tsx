@@ -10,7 +10,7 @@ export default function Proceso() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Proceso"
-          title="Así trabajamos"
+          title={<>Así <span className="text-accent">trabajamos</span></>}
           subtitle="De la cotización a la entrega, te acompañamos en cada paso."
         />
 
