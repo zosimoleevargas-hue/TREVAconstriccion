@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -13,28 +14,28 @@ export default function AvisoDePrivacidad() {
     <>
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
-          <a href="/" className="text-xl font-bold text-primary tracking-tight">
+          <Link href="/" className="text-xl font-bold text-primary tracking-tight">
             TREVA
-          </a>
-          <a
+          </Link>
+          <Link
             href="/"
             className="text-sm text-gray-500 hover:text-accent transition-colors"
           >
             &larr; Volver al inicio
-          </a>
+          </Link>
         </div>
       </header>
 
-      <main className="bg-white py-16 sm:py-24">
+      <main id="main-content" className="bg-white py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
             Aviso de Privacidad
           </h1>
           <p className="text-sm text-gray-400 mb-12">
-            Última actualización: Julio 2026
+            Última actualización: {new Date().toLocaleDateString("es-MX", { year: "numeric", month: "long" })}
           </p>
 
-          <div className="prose prose-gray max-w-none space-y-10">
+          <div className="max-w-none space-y-10">
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-3">
                 Responsable del tratamiento de datos

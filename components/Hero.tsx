@@ -116,7 +116,7 @@ export default function Hero() {
                   loop
                   muted
                   playsInline
-                  preload="none"
+                  preload="metadata"
                   poster="/camion-mezcla.jpg"
                   className="w-full h-full object-cover"
                   aria-label="Camión revolvedor TREVA descargando concreto premezclado"

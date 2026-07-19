@@ -94,10 +94,6 @@ html {
   color: white;
 }
 
-.accent-glow {
-  box-shadow: 0 0 30px color-mix(in srgb, #E85D2C 25%, transparent);
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }

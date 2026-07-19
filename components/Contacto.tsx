@@ -10,7 +10,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 const schema = z.object({
   nombre: z.string().min(2, "Tu nombre es obligatorio"),
-  telefono: z.string().min(8, "Teléfono inválido"),
+  telefono: z.string().regex(/^\d{10,15}$/, "Ingresa un teléfono a 10 dígitos (ej: 6861234567)"),
   mensaje: z.string().min(5, "Cuéntanos qué necesitas"),
 });
 
@@ -38,17 +38,21 @@ export default function Contacto() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   const enviarWhatsApp = (data: FormData) => {
-    const texto = WHATSAPP_MESSAGE.cotizacion(data);
-    window.open(
-      `https://wa.me/${COMPANY.phoneRaw}?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
-      "_blank"
-    );
+    try {
+      const texto = WHATSAPP_MESSAGE.cotizacion(data);
+      window.open(
+        `https://wa.me/${COMPANY.phoneRaw}?text=${encodeURIComponent(texto).replace(/%20/g, "%0A")}`,
+        "_blank"
+      );
+    } catch {
+      console.error("Error al abrir WhatsApp");
+    }
   };
 
   return (
@@ -167,12 +171,13 @@ export default function Contacto() {
                 </div>
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="btn-lift w-full inline-flex items-center justify-center gap-2.5 bg-accent text-white py-3.5 rounded-xl font-semibold hover:bg-accent-dark transition-all shadow-lg shadow-accent/25"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
+                  className="btn-lift w-full inline-flex items-center justify-center gap-2.5 bg-accent text-white py-3.5 rounded-xl font-semibold hover:bg-accent-dark transition-all shadow-lg shadow-accent/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={16} />
-                  Enviar cotización
+                  {isSubmitting ? "Enviando..." : "Enviar cotización"}
                 </motion.button>
               </form>
             </div>

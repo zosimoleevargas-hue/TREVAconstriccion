@@ -15,7 +15,7 @@ export default function Calculadora() {
     const l = parseFloat(largo);
     const a = parseFloat(ancho);
     const e = parseFloat(espesor);
-    if (l && a && e) {
+    if (l > 0 && a > 0 && e > 0) {
       const m3 = l * a * (e / 100);
       setResultado(Math.round(m3 * 100) / 100);
     }
@@ -80,6 +80,7 @@ export default function Calculadora() {
                   <input
                     type="number"
                     step="0.01"
+                    inputMode="decimal"
                     value={largo}
                     onChange={(e) => setLargo(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"
@@ -93,6 +94,7 @@ export default function Calculadora() {
                   <input
                     type="number"
                     step="0.01"
+                    inputMode="decimal"
                     value={ancho}
                     onChange={(e) => setAncho(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"
@@ -106,6 +108,7 @@ export default function Calculadora() {
                   <input
                     type="number"
                     step="0.5"
+                    inputMode="decimal"
                     value={espesor}
                     onChange={(e) => setEspesor(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors bg-gray-50/50"

@@ -13,25 +13,25 @@ export default function ScrollToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToTop = () => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: prefersReduced ? "instant" as const : "smooth" as const });
+  };
+
   return (
-    <>
-      <AnimatePresence>
-        {visible && (
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-24 right-6 z-40 w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:border-accent hover:text-accent transition-colors"
-            aria-label="Volver arriba"
-          >
-            <ArrowUp size={20} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-      <div aria-live="polite" role="status" className="sr-only">
-        {visible ? "Botón volver arriba disponible" : "Botón volver arriba oculto"}
-      </div>
-    </>
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          onClick={scrollToTop}
+          className="fixed bottom-24 right-6 z-40 w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:border-accent hover:text-accent transition-colors"
+          aria-label="Volver arriba"
+        >
+          <ArrowUp size={20} />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 }

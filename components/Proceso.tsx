@@ -29,7 +29,7 @@ export default function Proceso() {
                   delay: i * 0.1,
                   ease: "easeOut" as const,
                 }}
-                className="relative flex flex-col items-center text-center"
+                className="relative flex flex-col items-center text-center group"
               >
                 <div className="relative mb-4">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white flex items-center justify-center shadow-lg shadow-accent/25 group-hover:scale-105 transition-transform duration-300">

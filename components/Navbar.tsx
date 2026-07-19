@@ -74,7 +74,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className={`md:hidden ${scrolled ? "text-gray-700" : "text-gray-700"}`}
+          className="md:hidden text-gray-700"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={mobileOpen}

@@ -1,17 +1,17 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://treva-concreto.vercel.app";
+const BASE_URL = "https://treva-concreto.vercel.app";
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: base,
+      url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${base}/aviso-de-privacidad`,
+      url: `${BASE_URL}/aviso-de-privacidad`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
