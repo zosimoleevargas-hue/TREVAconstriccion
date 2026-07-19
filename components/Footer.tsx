@@ -24,24 +24,24 @@ const CONTACTOS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-gray-300">
+    <footer className="bg-gray-950 text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Image
-              src="/logo-treva-white.svg"
+              src="/logo-treva.png"
               alt="TREVA Concreto Premezclado"
               width={180}
-              height={72}
+              height={59}
               className="h-16 w-auto mb-5"
             />
-            <p className="text-sm leading-relaxed text-gray-400 mb-6">
+            <p className="text-sm leading-relaxed text-gray-500 mb-6">
               Venta y distribución de concreto premezclado en Mexicali y Valle
               de Mexicali.
             </p>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-xs text-gray-400">Disponibles ahora</span>
+              <span className="text-xs text-gray-500">Disponibles ahora</span>
             </div>
           </div>
 
@@ -67,12 +67,12 @@ export default function Footer() {
                         }
                         className="flex items-center gap-3 text-sm hover:text-accent transition-colors group"
                       >
-                        <Icon size={14} className="text-gray-400 group-hover:text-accent transition-colors" />
+                        <Icon size={14} className="text-gray-600 group-hover:text-accent transition-colors" />
                         {c.label}
                       </a>
                     ) : (
                       <span className="flex items-center gap-3 text-sm">
-                        <Icon size={14} className="text-gray-400" />
+                        <Icon size={14} className="text-gray-600" />
                         {c.label}
                       </span>
                     )}
@@ -106,21 +106,21 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex justify-between">
-                <span className="text-gray-400">Lun - Sáb</span>
+                <span className="text-gray-500">Lun - Sáb</span>
                 <span className="text-gray-300">7:00 - 15:00</span>
               </li>
               <li className="flex justify-between">
-                <span className="text-gray-400">Domingo</span>
-                <span className="text-gray-400">Cerrado</span>
+                <span className="text-gray-500">Domingo</span>
+                <span className="text-gray-500">Cerrado</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p className="text-gray-400">
+          <p className="text-gray-600">
             &copy; {new Date().getFullYear()} TREVA Concreto. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 items-center">
@@ -128,14 +128,14 @@ export default function Footer() {
               href={`https://instagram.com/${COMPANY.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-400 hover:text-accent transition-colors"
+              className="flex items-center gap-1.5 text-gray-600 hover:text-accent transition-colors"
             >
               <Globe size={14} />
               Instagram
             </a>
             <a
               href="/aviso-de-privacidad"
-              className="text-gray-400 hover:text-accent transition-colors"
+              className="text-gray-600 hover:text-accent transition-colors"
             >
               Aviso de privacidad
             </a>
