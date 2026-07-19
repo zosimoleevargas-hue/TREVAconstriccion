@@ -32,7 +32,7 @@ export default function Cobertura() {
           </FadeIn>
 
           <FadeIn x={30}>
-            <h3 className="text-3xl font-bold text-primary mb-8 tracking-tight">
+            <h3 className="text-3xl font-bold text-hero-title mb-8 tracking-tight">
               Cubrimos toda la <span className="text-accent">región</span>
             </h3>
             <div className="space-y-4">

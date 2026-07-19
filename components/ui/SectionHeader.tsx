@@ -14,7 +14,7 @@ export default function SectionHeader({
       <span className={`text-sm font-medium uppercase tracking-widest ${dark ? "text-accent" : "text-primary"}`}>
         {label}
       </span>
-      <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 tracking-tight ${dark ? "text-white" : "text-primary"}`}>
+      <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 tracking-tight ${dark ? "text-white" : "text-hero-title"}`}>
         {title}
       </h2>
       {subtitle && (

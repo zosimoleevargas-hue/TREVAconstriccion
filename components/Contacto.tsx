@@ -113,7 +113,7 @@ export default function Contacto() {
             transition={{ duration: 0.6 }}
           >
             <div className="bg-white rounded-3xl p-8 border border-gray-200 card-shadow-lg">
-              <h3 className="text-primary text-lg font-semibold mb-2">
+              <h3 className="text-hero-title text-lg font-semibold mb-2">
                 Envíanos un <span className="text-accent">mensaje</span>
               </h3>
               <p className="text-gray-500 text-sm mb-6">
